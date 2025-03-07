@@ -8,7 +8,15 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
-import { Search, Filter } from "lucide-react"
+import { Search, Filter, Code2 } from "lucide-react"
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 import DashboardNav from "@/components/dashboard-nav"
 
 type Engineer = {
@@ -32,6 +40,7 @@ export default function SearchPage() {
   const [results, setResults] = useState<Engineer[]>([])
   const [loading, setLoading] = useState(false)
   const [selectedSkills, setSelectedSkills] = useState<string[]>([])
+  const [isFilterOpen, setIsFilterOpen] = useState(false)
 
   const commonSkills = [
     "JavaScript",
@@ -77,12 +86,46 @@ export default function SearchPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <DashboardNav />
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
         <div className="flex items-center justify-between space-y-2">
-          <h2 className="text-3xl font-bold tracking-tight">Find Professionals</h2>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Find Professionals</h2>
         </div>
-        <div className="grid gap-4 md:grid-cols-[250px_1fr]">
-          <Card className="h-fit">
+        <div className="flex flex-col md:grid md:grid-cols-[250px_1fr] gap-4">
+          {/* Mobile Filter Button */}
+          <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
+            <SheetTrigger asChild>
+              <Button variant="outline" className="w-full md:hidden">
+                <Filter className="mr-2 h-4 w-4" />
+                Filters
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+              <SheetHeader>
+                <SheetTitle>Filters</SheetTitle>
+                <SheetDescription>Refine your search results</SheetDescription>
+              </SheetHeader>
+              <div className="mt-4 space-y-6">
+                <div className="space-y-2">
+                  <h3 className="text-sm font-medium">Skills</h3>
+                  <div className="space-y-2">
+                    {commonSkills.map((skill) => (
+                      <div key={skill} className="flex items-center space-x-2">
+                        <Checkbox
+                          id={`mobile-skill-${skill}`}
+                          checked={selectedSkills.includes(skill)}
+                          onCheckedChange={() => toggleSkill(skill)}
+                        />
+                        <Label htmlFor={`mobile-skill-${skill}`}>{skill}</Label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+
+          {/* Desktop Filter Card */}
+          <Card className="hidden md:block h-fit">
             <CardHeader>
               <CardTitle>Filters</CardTitle>
               <CardDescription>Refine your search results</CardDescription>
@@ -105,6 +148,7 @@ export default function SearchPage() {
               </div>
             </CardContent>
           </Card>
+
           <div className="space-y-4">
             <div className="flex gap-2">
               <div className="flex-1">
@@ -120,7 +164,7 @@ export default function SearchPage() {
                 Search
               </Button>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <Filter className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">Active filters:</span>
               {selectedSkills.length > 0 ? (
@@ -152,13 +196,13 @@ export default function SearchPage() {
               )}
             </div>
             {loading ? (
-              <div className="flex justify-center p-12">
+              <div className="flex justify-center p-8 md:p-12">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
               </div>
             ) : results.length > 0 ? (
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {results.map((engineer) => (
-                  <Card key={engineer.id}>
+                  <Card key={engineer.id} className="flex flex-col">
                     <CardHeader className="flex flex-row items-start gap-4">
                       <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center overflow-hidden">
                         <img
@@ -170,13 +214,13 @@ export default function SearchPage() {
                         />
                       </div>
                       <div className="grid gap-1">
-                        <CardTitle>{engineer.name}</CardTitle>
-                        <CardDescription>{engineer.title}</CardDescription>
+                        <CardTitle className="line-clamp-1">{engineer.name}</CardTitle>
+                        <CardDescription className="line-clamp-1">{engineer.title}</CardDescription>
                         <div className="text-xs text-muted-foreground">{engineer.location}</div>
                       </div>
                     </CardHeader>
-                    <CardContent className="grid gap-2">
-                      <div className="text-sm">{engineer.summary}</div>
+                    <CardContent className="grid gap-2 flex-1">
+                      <div className="text-sm line-clamp-2">{engineer.summary}</div>
                       <div className="mt-2">
                         <h4 className="text-sm font-medium mb-1">Top Skills</h4>
                         <div className="flex flex-wrap gap-1">
@@ -192,7 +236,7 @@ export default function SearchPage() {
                         <div className="space-y-2">
                           {engineer.projects.slice(0, 2).map((project) => (
                             <div key={project.name} className="text-sm">
-                              <div className="font-medium">{project.name}</div>
+                              <div className="font-medium line-clamp-1">{project.name}</div>
                               <div className="text-xs text-muted-foreground line-clamp-2">{project.description}</div>
                             </div>
                           ))}
