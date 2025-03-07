@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { GithubIcon, Code2Icon, SearchIcon, DollarSignIcon } from "lucide-react"
@@ -43,7 +45,7 @@ export default function Home() {
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     See real work.
                     <br />
-                    <hr/>
+                    <div className="h-1 w-32 bg-gradient-to-r from-primary to-transparent my-4" />
                     Hire real talent.
                   </h1>
                   <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
