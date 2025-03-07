@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
-import { SearchIcon, FilterIcon, Code2Icon } from "lucide-react"
+import { Search, Filter, Code2 } from "lucide-react"
 import DashboardNav from "@/components/dashboard-nav"
 
 type Engineer = {
@@ -116,12 +116,12 @@ export default function SearchPage() {
                 />
               </div>
               <Button onClick={handleSearch}>
-                <SearchIcon className="h-4 w-4 mr-2" />
+                <Search className="h-4 w-4 mr-2" />
                 Search
               </Button>
             </div>
             <div className="flex items-center gap-2">
-              <FilterIcon className="h-4 w-4 text-muted-foreground" />
+              <Filter className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">Active filters:</span>
               {selectedSkills.length > 0 ? (
                 <div className="flex flex-wrap gap-1">
@@ -211,7 +211,7 @@ export default function SearchPage() {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center h-64">
-                <SearchIcon className="h-8 w-8 mb-4 text-muted-foreground" />
+                <Search className="h-8 w-8 mb-4 text-muted-foreground" />
                 <h3 className="text-lg font-medium">No professionals found</h3>
                 <p className="text-sm text-muted-foreground mt-1">Try adjusting your search filters</p>
               </div>

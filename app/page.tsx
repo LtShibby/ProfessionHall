@@ -13,25 +13,25 @@ export default function Home() {
             <span className="font-bold text-xl">ProfessionHall</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/how-it-works" className="text-sm font-medium hover:underline">
+            <Link href="/dashboard" className="text-sm font-medium hover:text-primary transition-colors">
+              Dashboard
+            </Link>
+            <Link href="/search" className="text-sm font-medium hover:text-primary transition-colors">
+              Find Talent
+            </Link>
+            <Link href="/how-it-works" className="text-sm font-medium hover:text-primary transition-colors">
               How It Works
             </Link>
-            <Link href="/for-engineers" className="text-sm font-medium hover:underline">
-              For Professionals
-            </Link>
-            <Link href="/for-companies" className="text-sm font-medium hover:underline">
-              For Companies
-            </Link>
-            <Link href="/pricing" className="text-sm font-medium hover:underline">
+            <Link href="/pricing" className="text-sm font-medium hover:text-primary transition-colors">
               Pricing
             </Link>
           </nav>
           <div className="flex items-center gap-4">
             <Link href="/login">
-              <Button variant="outline">Sign In</Button>
+              <Button variant="outline" className="hover:text-primary">Sign In</Button>
             </Link>
             <Link href="/signup">
-              <Button>Sign Up</Button>
+              <Button className="bg-primary hover:bg-primary/90">Sign Up</Button>
             </Link>
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function Home() {
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+            <div className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[0.8fr_800px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
@@ -54,27 +54,27 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link href="/signup?type=engineer">
-                    <Button size="lg" className="w-full">
+                    <Button size="lg" className="w-full bg-primary hover:bg-primary/90">
                       <GithubIcon className="mr-2 h-4 w-4" />
                       Join as Engineer
                     </Button>
                   </Link>
                   <Link href="/signup?type=recruiter">
-                    <Button size="lg" variant="outline" className="w-full">
+                    <Button size="lg" variant="outline" className="w-full hover:text-primary">
                       <SearchIcon className="mr-2 h-4 w-4" />
                       Join as Recruiter
                     </Button>
                   </Link>
                 </div>
               </div>
-              <div className="mx-auto lg:ml-auto">
-                <div className="aspect-video overflow-hidden rounded-xl border bg-gray-100 dark:bg-gray-800">
+              <div className="mx-auto w-full lg:ml-auto">
+                <div className="h-full rounded-xl border bg-gray-100 dark:bg-gray-800">
                   <img
-                    src="/placeholder.svg?height=720&width=1280"
+                    src="/professionHallBanner.jpg?height=720&width=1280"
                     alt="Platform preview"
                     width={1280}
                     height={720}
-                    className="object-cover"
+                    className="object-cover w-full h-full rounded-xl"
                   />
                 </div>
               </div>

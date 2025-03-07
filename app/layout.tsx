@@ -11,7 +11,11 @@ export const metadata: Metadata = {
   title: "ProfessionHall - Hire Professionals Based on Work, Not Resumes",
   description:
     "A platform connecting professionals with companies through real projects, portfolios, and work samples.",
-    generator: 'v0.dev'
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.svg',
+  },
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

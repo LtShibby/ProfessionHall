@@ -3,7 +3,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CalendarIcon, GithubIcon, BarChart3Icon, UsersIcon, BriefcaseIcon, CodeIcon } from "lucide-react"
+import { 
+  CalendarIcon, 
+  GithubIcon, 
+  BarChart3, 
+  Users, 
+  Briefcase, 
+  Code2 
+} from "lucide-react"
 import DashboardNav from "@/components/dashboard-nav"
 
 export const metadata: Metadata = {
@@ -36,7 +43,7 @@ export default function DashboardPage() {
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Profile Views</CardTitle>
-                  <UsersIcon className="h-4 w-4 text-muted-foreground" />
+                  <Users className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">127</div>
@@ -46,7 +53,7 @@ export default function DashboardPage() {
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Project Views</CardTitle>
-                  <CodeIcon className="h-4 w-4 text-muted-foreground" />
+                  <Code2 className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">342</div>
@@ -56,7 +63,7 @@ export default function DashboardPage() {
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Recruiter Contacts</CardTitle>
-                  <BriefcaseIcon className="h-4 w-4 text-muted-foreground" />
+                  <Briefcase className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">8</div>
@@ -66,7 +73,7 @@ export default function DashboardPage() {
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Profile Completion</CardTitle>
-                  <BarChart3Icon className="h-4 w-4 text-muted-foreground" />
+                  <BarChart3 className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">78%</div>
@@ -107,7 +114,7 @@ export default function DashboardPage() {
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <BriefcaseIcon className="mr-2 h-4 w-4 text-muted-foreground" />
+                      <Briefcase className="mr-2 h-4 w-4 text-muted-foreground" />
                       <div className="ml-2 space-y-1">
                         <p className="text-sm font-medium leading-none">New job opportunity match</p>
                         <p className="text-sm text-muted-foreground">2 days ago</p>
@@ -130,7 +137,7 @@ export default function DashboardPage() {
                 <CardContent>
                   <div className="space-y-2">
                     <div className="h-[120px] w-full bg-muted rounded-md flex items-center justify-center">
-                      <CodeIcon className="h-8 w-8 text-muted-foreground" />
+                      <Code2 className="h-8 w-8 text-muted-foreground" />
                     </div>
                     <div className="space-y-1">
                       <p className="text-sm text-muted-foreground">
@@ -161,7 +168,7 @@ export default function DashboardPage() {
                 <CardContent>
                   <div className="space-y-2">
                     <div className="h-[120px] w-full bg-muted rounded-md flex items-center justify-center">
-                      <CodeIcon className="h-8 w-8 text-muted-foreground" />
+                      <Code2 className="h-8 w-8 text-muted-foreground" />
                     </div>
                     <div className="space-y-1">
                       <p className="text-sm text-muted-foreground">
@@ -192,7 +199,7 @@ export default function DashboardPage() {
                 <CardContent>
                   <div className="space-y-2">
                     <div className="h-[120px] w-full bg-muted rounded-md flex items-center justify-center">
-                      <CodeIcon className="h-8 w-8 text-muted-foreground" />
+                      <Code2 className="h-8 w-8 text-muted-foreground" />
                     </div>
                     <div className="space-y-1">
                       <p className="text-sm text-muted-foreground">

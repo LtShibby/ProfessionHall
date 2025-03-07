@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-favicon": "node scripts/generate-favicon.js"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^1.0.0",
+    "@auth/core": "0.34.2",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-alert-dialog": "^1.1.4",
@@ -37,6 +40,7 @@
     "@radix-ui/react-toggle": "^1.1.1",
     "@radix-ui/react-toggle-group": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.6",
+    "ai": "^2.2.31",
     "autoprefixer": "^10.4.16",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -46,7 +50,9 @@
     "input-otp": "1.1.0",
     "lucide-react": "^0.330.0",
     "next": "14.1.0",
+    "next-auth": "^4.24.5",
     "next-themes": "^0.2.1",
+    "nodemailer": "^6.9.9",
     "react": "^18.2.0",
     "react-day-picker": "8.10.1",
     "react-dom": "^18.2.0",
@@ -57,18 +63,15 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.8.0",
-    "zod": "^3.22.4",
-    "@auth/core": "0.34.2",
-    "nodemailer": "^6.9.9",
-    "ai": "^2.2.31",
-    "@ai-sdk/openai": "^1.0.0",
-    "next-auth": "^4.24.5"
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.5",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
+    "ico-endec": "^0.1.6",
     "postcss": "^8.4.33",
+    "sharp": "^0.32.6",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }
