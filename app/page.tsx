@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { GithubIcon, Code2Icon, SearchIcon, DollarSignIcon } from "lucide-react"
+import { GithubIcon, SearchIcon } from "lucide-react"
 
 export default function Home() {
   return (
@@ -102,7 +102,6 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
-                <Code2Icon className="h-6 w-6 text-primary" />
                 <div className="space-y-2 text-center">
                   <h3 className="text-xl font-bold">Skill Mapping</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">

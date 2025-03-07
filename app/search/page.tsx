@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
-import { Search, Filter, Code2 } from "lucide-react"
+import { Search, Filter } from "lucide-react"
 import DashboardNav from "@/components/dashboard-nav"
 
 type Engineer = {

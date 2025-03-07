@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Code2Icon, LayoutDashboardIcon, UserIcon, SettingsIcon, LogOutIcon } from "lucide-react"
+import { LayoutDashboardIcon, UserIcon, SettingsIcon, LogOutIcon } from "lucide-react"
 
 export default function DashboardNav() {
   const pathname = usePathname()
@@ -21,7 +21,6 @@ export default function DashboardNav() {
     <div className="border-b">
       <div className="flex h-16 items-center px-4">
         <Link href="/" className="flex items-center gap-2">
-          <Code2Icon className="h-6 w-6" />
           <span className="font-bold text-xl">ProfessionHall</span>
         </Link>
         <nav className="flex items-center space-x-4 lg:space-x-6 mx-6">
