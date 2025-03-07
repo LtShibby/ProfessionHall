@@ -1,50 +1,105 @@
 "use client";
 
 import Link from "next/link";
-import { useTheme } from "next-themes";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 export function Footer() {
-  const { theme } = useTheme();
-  
-  const themeClasses = {
-    nav: theme === 'dark' ? 'bg-gray-800' : 'bg-white',
-    text: theme === 'dark' ? 'text-white' : 'text-gray-800',
-    button: theme === 'dark' ? 'bg-gray-700 text-white' : 'bg-gray-100 text-gray-800'
-  };
-  
   return (
-    <footer className={`w-full ${themeClasses.nav} ${themeClasses.text} py-6 text-center text-sm mt-auto`}>
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-        <p className="mb-2 md:mb-0">
-          © {new Date().getFullYear()}{" "}
-          <Link 
-            href="https://wozwize.com"
-            className={`${themeClasses.button} px-2 py-1 rounded hover:opacity-90 transition`}
-          >
-            WozWize
-          </Link>
-          . All Rights Reserved.
-        </p>
-        
-        <div className="flex space-x-4">
-          <Link 
-            href="https://wozwize.com/privacy-policy"
-            className="hover:opacity-80 transition"
-          >
-            Privacy Policy
-          </Link>
-          <Link 
-            href="https://wozwize.com/terms-of-service"
-            className="hover:opacity-80 transition"
-          >
-            Terms of Service
-          </Link>
-          <Link 
-            href="https://wozwize.com/about-us"
-            className="hover:opacity-80 transition"
-          >
-            About Us
-          </Link>
+    <footer className="w-full bg-card text-card-foreground border-t">
+      <div className="ph-gradient h-1" />
+      <div className="container mx-auto py-8 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand Section */}
+          <div className="space-y-4">
+            <Link href="/" className="text-xl font-bold">
+              ProfessionHall
+            </Link>
+            <p className="text-sm text-muted-foreground">
+              Where real work speaks louder than resumes.
+            </p>
+            <div className="flex space-x-4">
+              <Link href="https://twitter.com/professionhall" className="text-muted-foreground hover:text-primary transition">
+                <Twitter size={20} />
+              </Link>
+              <Link href="https://linkedin.com/company/professionhall" className="text-muted-foreground hover:text-primary transition">
+                <Linkedin size={20} />
+              </Link>
+              <Link href="https://github.com/professionhall" className="text-muted-foreground hover:text-primary transition">
+                <Github size={20} />
+              </Link>
+            </div>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="font-semibold mb-4">Resources</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides" className="text-sm text-muted-foreground hover:text-primary transition">
+                  Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/help" className="text-sm text-muted-foreground hover:text-primary transition">
+                  Help Center
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="font-semibold mb-4">Company</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers" className="text-sm text-muted-foreground hover:text-primary transition">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookies" className="text-sm text-muted-foreground hover:text-primary transition">
+                  Cookie Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} ProfessionHall. All rights reserved.</p>
         </div>
       </div>
     </footer>
