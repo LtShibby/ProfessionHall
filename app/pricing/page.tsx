@@ -231,21 +231,6 @@ export default function PricingPage() {
           </div>
         </section>
       </main>
-      <footer className="border-t py-6 md:py-0">
-        <div className="container flex flex-col gap-4 md:h-16 md:flex-row md:items-center md:justify-between">
-          <p className="text-center text-sm leading-loose text-gray-500 md:text-left">
-            © 2025 ProfessionHall. All rights reserved.
-          </p>
-          <div className="flex items-center justify-center gap-4 md:justify-end">
-            <Link href="/terms" className="text-sm text-gray-500 hover:underline">
-              Terms
-            </Link>
-            <Link href="/privacy" className="text-sm text-gray-500 hover:underline">
-              Privacy
-            </Link>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

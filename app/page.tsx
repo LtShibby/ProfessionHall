@@ -8,7 +8,6 @@ export default function Home() {
       <header className="border-b">
         <div className="container flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-2">
-            <Code2Icon className="h-6 w-6" />
             <span className="font-bold text-xl">ProfessionHall</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
@@ -42,7 +41,10 @@ export default function Home() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Hire Professionals Based on Work, Not Resumes
+                    See real work.
+                    <br />
+                    <hr/>
+                    Hire real talent.
                   </h1>
                   <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
                     ProfessionHall connects professionals with companies through real projects, portfolios, and work samples.
@@ -115,7 +117,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
+              {/* <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
                 <DollarSignIcon className="h-6 w-6 text-primary" />
                 <div className="space-y-2 text-center">
                   <h3 className="text-xl font-bold">Company Discovery</h3>
@@ -123,24 +125,11 @@ export default function Home() {
                     Recruiters filter and find professionals based on actual projects and skills.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
       </main>
-      <footer className="w-full py-6 bg-gray-100 dark:bg-gray-800">
-        <div className="container flex flex-col items-center justify-center gap-4 text-center md:flex-row md:gap-8 md:text-start">
-          <p className="text-sm text-gray-500 dark:text-gray-400">© 2025 ProfessionHall. All rights reserved.</p>
-          <div className="flex items-center justify-center gap-4 md:justify-end">
-            <Link href="/terms" className="text-sm text-gray-500 hover:underline">
-              Terms
-            </Link>
-            <Link href="/privacy" className="text-sm text-gray-500 hover:underline">
-              Privacy
-            </Link>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
