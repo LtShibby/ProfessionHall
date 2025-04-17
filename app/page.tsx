@@ -2,6 +2,8 @@
 
 import { SearchIcon, UsersIcon, MailIcon } from "lucide-react"
 import { NavBar } from "@/components/navbar"
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (

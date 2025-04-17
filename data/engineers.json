@@ -1,0 +1,38 @@
+{
+  "engineers": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "title": "Senior Full Stack Developer",
+      "skills": ["React", "Node.js", "Python", "AWS"],
+      "experience": 8,
+      "location": "Remote",
+      "availability": "Full-time",
+      "bio": "Experienced full-stack developer with a passion for building scalable web applications.",
+      "projects": [
+        {
+          "name": "E-commerce Platform",
+          "description": "Built a scalable e-commerce platform using React and Node.js",
+          "technologies": ["React", "Node.js", "MongoDB"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "title": "Frontend Developer",
+      "skills": ["React", "TypeScript", "CSS", "UI/UX"],
+      "experience": 5,
+      "location": "New York",
+      "availability": "Contract",
+      "bio": "Frontend specialist focused on creating beautiful and responsive user interfaces.",
+      "projects": [
+        {
+          "name": "Design System",
+          "description": "Developed a comprehensive design system for a large enterprise",
+          "technologies": ["React", "Storybook", "Styled Components"]
+        }
+      ]
+    }
+  ]
+} 

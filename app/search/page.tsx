@@ -20,19 +20,19 @@ import {
 import { NavBar } from "@/components/navbar"
 
 type Engineer = {
-  id: string
+  id: number
   name: string
   title: string
+  skills: string[]
+  experience: number
   location: string
-  image: string
-  skills: { name: string; level: string; percentage: number }[]
+  availability: string
+  bio: string
   projects: {
     name: string
     description: string
     technologies: string[]
-    url: string
   }[]
-  summary: string
 }
 
 export default function SearchPage() {
@@ -41,32 +41,41 @@ export default function SearchPage() {
   const [loading, setLoading] = useState(false)
   const [selectedSkills, setSelectedSkills] = useState<string[]>([])
   const [isFilterOpen, setIsFilterOpen] = useState(false)
+  const [locationFilter, setLocationFilter] = useState("")
+  const [experienceFilter, setExperienceFilter] = useState("")
 
   const commonSkills = [
-    "JavaScript",
-    "TypeScript",
     "React",
     "Node.js",
     "Python",
+    "TypeScript",
+    "JavaScript",
+    "AWS",
     "Java",
     "C#",
     "Go",
     "Ruby",
     "PHP",
-    "AWS",
     "Docker",
     "Kubernetes",
     "MongoDB",
     "PostgreSQL",
+    "UI/UX",
+    "CSS"
   ]
 
   const handleSearch = async () => {
     setLoading(true)
     try {
-      const skillsParam = selectedSkills.length > 0 ? `&skills=${selectedSkills.join(",")}` : ""
-      const response = await fetch(`/api/search?q=${searchQuery}${skillsParam}`)
+      const params = new URLSearchParams()
+      if (searchQuery) params.append('q', searchQuery)
+      if (selectedSkills.length > 0) params.append('skills', selectedSkills.join(','))
+      if (locationFilter) params.append('location', locationFilter)
+      if (experienceFilter) params.append('experience', experienceFilter)
+
+      const response = await fetch(`/api/search?${params.toString()}`)
       const data = await response.json()
-      setResults(data)
+      setResults(data.results)
     } catch (error) {
       console.error("Error searching engineers:", error)
     } finally {
@@ -80,15 +89,14 @@ export default function SearchPage() {
 
   useEffect(() => {
     handleSearch()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedSkills])
+  }, [selectedSkills, locationFilter, experienceFilter])
 
   return (
     <div className="flex min-h-screen flex-col">
       <NavBar />
       <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
         <div className="flex items-center justify-between space-y-2">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Find Professionals</h2>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Find Talent</h2>
         </div>
         <div className="flex flex-col md:grid md:grid-cols-[250px_1fr] gap-4">
           {/* Mobile Filter Button */}
@@ -120,6 +128,23 @@ export default function SearchPage() {
                     ))}
                   </div>
                 </div>
+                <div className="space-y-2">
+                  <h3 className="text-sm font-medium">Location</h3>
+                  <Input
+                    placeholder="Filter by location"
+                    value={locationFilter}
+                    onChange={(e) => setLocationFilter(e.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-sm font-medium">Minimum Experience (years)</h3>
+                  <Input
+                    type="number"
+                    placeholder="Years of experience"
+                    value={experienceFilter}
+                    onChange={(e) => setExperienceFilter(e.target.value)}
+                  />
+                </div>
               </div>
             </SheetContent>
           </Sheet>
@@ -146,6 +171,23 @@ export default function SearchPage() {
                   ))}
                 </div>
               </div>
+              <div className="space-y-2">
+                <h3 className="text-sm font-medium">Location</h3>
+                <Input
+                  placeholder="Filter by location"
+                  value={locationFilter}
+                  onChange={(e) => setLocationFilter(e.target.value)}
+                />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-sm font-medium">Minimum Experience (years)</h3>
+                <Input
+                  type="number"
+                  placeholder="Years of experience"
+                  value={experienceFilter}
+                  onChange={(e) => setExperienceFilter(e.target.value)}
+                />
+              </div>
             </CardContent>
           </Card>
 
@@ -153,7 +195,7 @@ export default function SearchPage() {
             <div className="flex gap-2">
               <div className="flex-1">
                 <Input
-                  placeholder="Search by name, skill, or project..."
+                  placeholder="Search by name, title, or bio..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSearch()}
@@ -167,7 +209,7 @@ export default function SearchPage() {
             <div className="flex items-center gap-2 flex-wrap">
               <Filter className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">Active filters:</span>
-              {selectedSkills.length > 0 ? (
+              {selectedSkills.length > 0 || locationFilter || experienceFilter ? (
                 <div className="flex flex-wrap gap-1">
                   {selectedSkills.map((skill) => (
                     <Badge key={skill} variant="secondary" className="flex items-center gap-1">
@@ -190,6 +232,48 @@ export default function SearchPage() {
                       </button>
                     </Badge>
                   ))}
+                  {locationFilter && (
+                    <Badge variant="secondary" className="flex items-center gap-1">
+                      Location: {locationFilter}
+                      <button onClick={() => setLocationFilter("")} className="ml-1 rounded-full hover:bg-muted p-0.5">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M18 6 6 18" />
+                          <path d="m6 6 12 12" />
+                        </svg>
+                      </button>
+                    </Badge>
+                  )}
+                  {experienceFilter && (
+                    <Badge variant="secondary" className="flex items-center gap-1">
+                      Experience: {experienceFilter}+ years
+                      <button onClick={() => setExperienceFilter("")} className="ml-1 rounded-full hover:bg-muted p-0.5">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M18 6 6 18" />
+                          <path d="m6 6 12 12" />
+                        </svg>
+                      </button>
+                    </Badge>
+                  )}
                 </div>
               ) : (
                 <span className="text-sm text-muted-foreground">None</span>
@@ -205,59 +289,64 @@ export default function SearchPage() {
                   <Card key={engineer.id} className="flex flex-col">
                     <CardHeader className="flex flex-row items-start gap-4">
                       <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center overflow-hidden">
-                        <img
-                          src={engineer.image || "/placeholder.svg"}
-                          alt={engineer.name}
-                          width={48}
-                          height={48}
-                          className="object-cover"
-                        />
+                        <Code2 className="h-6 w-6 text-muted-foreground" />
                       </div>
                       <div className="grid gap-1">
                         <CardTitle className="line-clamp-1">{engineer.name}</CardTitle>
                         <CardDescription className="line-clamp-1">{engineer.title}</CardDescription>
-                        <div className="text-xs text-muted-foreground">{engineer.location}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {engineer.location} • {engineer.experience}+ years
+                        </div>
                       </div>
                     </CardHeader>
                     <CardContent className="grid gap-2 flex-1">
-                      <div className="text-sm line-clamp-2">{engineer.summary}</div>
+                      <div className="text-sm line-clamp-2">{engineer.bio}</div>
                       <div className="mt-2">
-                        <h4 className="text-sm font-medium mb-1">Top Skills</h4>
+                        <h4 className="text-sm font-medium mb-1">Skills</h4>
                         <div className="flex flex-wrap gap-1">
-                          {engineer.skills.slice(0, 5).map((skill) => (
-                            <Badge key={skill.name} variant="secondary">
-                              {skill.name}
+                          {engineer.skills.map((skill) => (
+                            <Badge key={skill} variant="secondary">
+                              {skill}
                             </Badge>
                           ))}
                         </div>
                       </div>
                       <div className="mt-2">
-                        <h4 className="text-sm font-medium mb-1">Featured Projects</h4>
+                        <h4 className="text-sm font-medium mb-1">Projects</h4>
                         <div className="space-y-2">
-                          {engineer.projects.slice(0, 2).map((project) => (
+                          {engineer.projects.map((project) => (
                             <div key={project.name} className="text-sm">
                               <div className="font-medium line-clamp-1">{project.name}</div>
                               <div className="text-xs text-muted-foreground line-clamp-2">{project.description}</div>
+                              <div className="flex flex-wrap gap-1 mt-1">
+                                {project.technologies.map((tech) => (
+                                  <Badge key={tech} variant="outline" className="text-xs">
+                                    {tech}
+                                  </Badge>
+                                ))}
+                              </div>
                             </div>
                           ))}
                         </div>
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Link href={`/profile/${engineer.id}`} className="w-full">
-                        <Button variant="outline" className="w-full">
-                          View Profile
-                        </Button>
-                      </Link>
+                      <Button variant="outline" className="w-full" asChild>
+                        <Link href={`mailto:matt@wozwize.com?subject=Interest in ${engineer.name}`}>
+                          Contact to Hire
+                        </Link>
+                      </Button>
                     </CardFooter>
                   </Card>
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center h-64">
-                <Search className="h-8 w-8 mb-4 text-muted-foreground" />
-                <h3 className="text-lg font-medium">No professionals found</h3>
-                <p className="text-sm text-muted-foreground mt-1">Try adjusting your search filters</p>
+              <div className="flex flex-col items-center justify-center p-8 md:p-12 text-center">
+                <Search className="h-12 w-12 text-muted-foreground mb-4" />
+                <h3 className="text-lg font-medium">No results found</h3>
+                <p className="text-sm text-muted-foreground">
+                  Try adjusting your search or filters to find what you're looking for.
+                </p>
               </div>
             )}
           </div>
