@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import {
   Card,
@@ -14,7 +15,7 @@ import { Button } from "@/components/ui/button"
 import { Code2 } from "lucide-react"
 import clsx from "clsx"
 
-type Project = {
+export type Project = {
   name: string
   description: string
   technologies: string[]
@@ -45,30 +46,38 @@ export type Engineer = {
   workAuthorization?: string
 }
 
-const workAuthColors: Record<string, string> = {
-  "US Citizen": "bg-green-100 text-green-800",
-  "Green Card": "bg-blue-100 text-blue-800",
-  H1B: "bg-yellow-100 text-yellow-800",
-  OPT: "bg-pink-100 text-pink-800",
-  CPT: "bg-orange-100 text-orange-800",
-  Other: "bg-gray-100 text-gray-800",
-  Any: "bg-slate-100 text-slate-800",
-}
-
 export function EngineerCard({ engineer }: { engineer: Engineer }) {
-  return (
-    <Card key={engineer.id} className="flex flex-col relative">
-      {/* Color pill strip for work authorization only */}
-      {engineer.workAuthorization && (
-        <div
-          className={clsx(
-            "absolute top-0 left-0 w-full h-1 rounded-t-md",
-            workAuthColors[engineer.workAuthorization] || "bg-purple-400"
-          )}
-        />
-      )}
+  const [showAllSkills, setShowAllSkills] = useState(false)
+  const [showFullBio, setShowFullBio] = useState(false)
+  const [expandedProjects, setExpandedProjects] = useState<Record<string, boolean>>({})
 
-      <CardHeader className="flex flex-col sm:flex-row sm:items-start sm:gap-4 mt-2">
+  const toggleProjectDescription = (projectName: string) => {
+    setExpandedProjects((prev) => ({
+      ...prev,
+      [projectName]: !prev[projectName],
+    }))
+  }
+
+  const skillLimit = 12
+  const visibleSkills = showAllSkills ? engineer.skills : engineer.skills.slice(0, skillLimit)
+
+  const headerColor = clsx({
+    "border-t-4 border-green-300": engineer.workAuthorization === "US Citizen",
+    "border-t-4 border-yellow-300": engineer.workAuthorization === "H1B",
+    "border-t-4 border-blue-300": engineer.workAuthorization === "OPT",
+    "border-t-4 border-purple-300": engineer.workAuthorization === "CPT",
+  })
+
+  const badgeColor = clsx("text-xs", {
+    "bg-green-100 text-green-800": engineer.workAuthorization === "US Citizen",
+    "bg-yellow-100 text-yellow-800": engineer.workAuthorization === "H1B",
+    "bg-blue-100 text-blue-800": engineer.workAuthorization === "OPT",
+    "bg-purple-100 text-purple-800": engineer.workAuthorization === "CPT",
+  })
+
+  return (
+    <Card key={engineer.id} className={clsx("flex flex-col", headerColor)}>
+      <CardHeader className="flex flex-col sm:flex-row sm:items-start sm:gap-4">
         <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center overflow-hidden">
           <Code2 className="h-6 w-6 text-muted-foreground" />
         </div>
@@ -80,54 +89,70 @@ export function EngineerCard({ engineer }: { engineer: Engineer }) {
               <div className="text-xs text-muted-foreground">
                 {engineer.location} • {engineer.experience}+ years
               </div>
+              {engineer.availability?.types && (
+                <div className="flex flex-wrap gap-1 mt-1">
+                  {engineer.availability.types.map((type) => (
+                    <Badge
+                      key={type}
+                      variant="outline"
+                      className={clsx("text-xs", {
+                        "bg-green-100 text-green-800": type === "Full Time",
+                        "bg-yellow-100 text-yellow-800": type === "Contract",
+                        "bg-blue-100 text-blue-800": type === "Part Time",
+                      })}
+                    >
+                      {type}
+                    </Badge>
+                  ))}
+                </div>
+              )}
             </div>
-            {engineer.availability?.types && (
-              <div className="flex flex-wrap gap-1 justify-end">
-                {engineer.availability.types.map((type) => (
-                  <Badge
-                    key={type}
-                    variant="outline"
-                    className={clsx("text-xs", {
-                      "bg-green-100 text-green-800": type === "Full-time",
-                      "bg-yellow-100 text-yellow-800": type === "Contract",
-                      "bg-blue-100 text-blue-800": type === "Part-time",
-                    })}
-                  >
-                    {type}
-                  </Badge>
-                ))}
-              </div>
-            )}
           </div>
         </div>
       </CardHeader>
 
       <CardContent className="grid gap-3 flex-1">
-        <div className="text-sm line-clamp-3 text-muted-foreground">{engineer.bio}</div>
-
         {engineer.workAuthorization && (
           <div>
-            <h4 className="text-sm font-medium mb-1">Work Authorization</h4>
-            <Badge
-              variant="outline"
-              className={clsx(
-                "text-xs",
-                workAuthColors[engineer.workAuthorization] || "bg-purple-100 text-purple-800"
-              )}
-            >
-              {engineer.workAuthorization}
-            </Badge>
-          </div>
+          <h4 className="text-sm font-medium mb-1">Work Authorization</h4>
+          <Badge className={badgeColor}>{engineer.workAuthorization}</Badge>
+        </div>
         )}
+
+        <div className="text-sm text-muted-foreground">
+          {showFullBio || engineer.bio.length < 200
+            ? engineer.bio
+            : `${engineer.bio.slice(0, 200)}...`}
+          {engineer.bio.length > 200 && (
+            <button
+              onClick={() => setShowFullBio(!showFullBio)}
+              className="text-xs ml-1 text-blue-600 hover:underline"
+            >
+              {showFullBio ? "Show less" : "Read more"}
+            </button>
+          )}
+        </div>
 
         <div>
           <h4 className="text-sm font-medium mb-1">Skills</h4>
           <div className="flex flex-wrap gap-1">
-            {engineer.skills.map((skill) => (
+            {visibleSkills.map((skill) => (
               <Badge key={skill} variant="secondary">
                 {skill}
               </Badge>
             ))}
+            {engineer.skills.length > skillLimit && (
+              <Button
+                size="sm"
+                variant="ghost"
+                className="text-xs text-blue-600 px-2 py-0.5 h-auto"
+                onClick={() => setShowAllSkills(!showAllSkills)}
+              >
+                {showAllSkills
+                  ? "Show less"
+                  : `+${engineer.skills.length - skillLimit} more`}
+              </Button>
+            )}
           </div>
         </div>
 
@@ -150,8 +175,18 @@ export function EngineerCard({ engineer }: { engineer: Engineer }) {
                     project.name
                   )}
                 </div>
-                <div className="text-xs text-muted-foreground line-clamp-2">
-                  {project.description}
+                <div className="text-xs text-muted-foreground">
+                  {expandedProjects[project.name] || project.description.length < 120
+                    ? project.description
+                    : `${project.description.slice(0, 120)}...`}
+                  {project.description.length > 120 && (
+                    <button
+                      onClick={() => toggleProjectDescription(project.name)}
+                      className="text-xs ml-1 text-blue-600 hover:underline"
+                    >
+                      {expandedProjects[project.name] ? "Show less" : "Read more"}
+                    </button>
+                  )}
                 </div>
                 <div className="flex flex-wrap gap-1 mt-1">
                   {project.technologies.map((tech) => (
