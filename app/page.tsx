@@ -1,45 +1,12 @@
 "use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { GithubIcon, SearchIcon } from "lucide-react"
-import { MobileNav } from "@/components/mobile-nav"
+import { SearchIcon, UsersIcon, MailIcon } from "lucide-react"
+import { NavBar } from "@/components/navbar"
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <MobileNav />
-            <Link href="/" className="flex items-center gap-2">
-              <span className="font-bold text-xl">ProfessionHall</span>
-            </Link>
-          </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="/dashboard" className="text-sm font-medium hover:text-primary transition-colors">
-              Dashboard
-            </Link>
-            <Link href="/search" className="text-sm font-medium hover:text-primary transition-colors">
-              Find Talent
-            </Link>
-            <Link href="/how-it-works" className="text-sm font-medium hover:text-primary transition-colors">
-              How It Works
-            </Link>
-            <Link href="/pricing" className="text-sm font-medium hover:text-primary transition-colors">
-              Pricing
-            </Link>
-          </nav>
-          <div className="hidden md:flex items-center gap-4">
-            <Link href="/login">
-              <Button variant="outline" className="hover:text-primary">Sign In</Button>
-            </Link>
-            <Link href="/signup">
-              <Button className="bg-primary hover:bg-primary/90">Sign Up</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <NavBar />
       <main className="flex-1">
         <section className="w-full py-8 md:py-12 lg:py-24">
           <div className="container px-4 md:px-6">
@@ -55,20 +22,6 @@ export default function Home() {
                   <p className="text-base sm:text-lg text-gray-500 md:text-xl dark:text-gray-400">
                     ProfessionHall connects professionals with companies through real projects, portfolios, and work samples.
                   </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Link href="/signup?type=engineer" className="w-full sm:w-auto">
-                    <Button size="lg" className="w-full bg-primary hover:bg-primary/90">
-                      <GithubIcon className="mr-2 h-4 w-4" />
-                      Join as Engineer
-                    </Button>
-                  </Link>
-                  <Link href="/signup?type=recruiter" className="w-full sm:w-auto">
-                    <Button size="lg" variant="outline" className="w-full hover:text-primary">
-                      <SearchIcon className="mr-2 h-4 w-4" />
-                      Join as Recruiter
-                    </Button>
-                  </Link>
                 </div>
               </div>
               <div className="mx-auto w-full lg:ml-auto order-1 lg:order-2">
@@ -89,37 +42,39 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2 max-w-[800px] mx-auto">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">How ProfessionHall Works</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What Is Professionhall?</h2>
                 <p className="text-gray-500 md:text-lg dark:text-gray-400">
-                  Our platform helps professionals showcase their work and connects them with companies looking for talent.
+                  Professionhall is WozWize's curated talent bench—a simple, searchable showcase of available engineers ready for contract, C2C, or full-time work.
                 </p>
               </div>
             </div>
             <div className="grid gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3">
               <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
-                <GithubIcon className="h-6 w-6 text-primary" />
-                <div className="space-y-2 text-center">
-                  <h3 className="text-xl font-bold">Showcase Your Work</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Link portfolios, upload projects, and showcase your real work.
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
-                <div className="space-y-2 text-center">
-                  <h3 className="text-xl font-bold">Skill Mapping</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    AI scans your profile and projects to map skills dynamically.
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
                 <SearchIcon className="h-6 w-6 text-primary" />
                 <div className="space-y-2 text-center">
-                  <h3 className="text-xl font-bold">Smart Matching</h3>
+                  <h3 className="text-xl font-bold">Search by Skill</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Quick surveys match professionals with companies based on work style.
+                    Use keyword search to find engineers with the tech stack you need—Java, Python, React, and more.
                   </p>
+                </div>
+              </div>
+              <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
+                <UsersIcon className="h-6 w-6 text-primary" />
+                <div className="space-y-2 text-center">
+                  <h3 className="text-xl font-bold">Browse the Bench</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Every profile is vetted and maintained by WozWize. No fluff, no dead links—just people who can ship.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
+                <MailIcon className="h-6 w-6 text-primary" />
+                <div className="space-y-2 text-center">
+                  <h3 className="text-xl font-bold">Contact to Hire</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    See someone that fits?
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Contact Us directly to get resumes, availability, and contract terms.</p>
                 </div>
               </div>
             </div>

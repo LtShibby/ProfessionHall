@@ -17,7 +17,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import DashboardNav from "@/components/dashboard-nav"
+import { NavBar } from "@/components/navbar"
 
 type Engineer = {
   id: string
@@ -85,7 +85,7 @@ export default function SearchPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <DashboardNav />
+      <NavBar />
       <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
         <div className="flex items-center justify-between space-y-2">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Find Professionals</h2>
