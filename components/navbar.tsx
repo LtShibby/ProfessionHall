@@ -13,6 +13,9 @@ export function NavBar() {
           </Link>
         </div>
         <nav className="hidden md:flex items-center gap-6">
+          <Link href="/apply" className="text-sm font-medium hover:text-primary transition-colors">
+            Join the Talent Pool
+          </Link>
           <Link href="/search" className="text-sm font-medium hover:text-primary transition-colors">
             Find Talent
           </Link>

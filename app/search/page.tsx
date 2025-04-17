@@ -18,6 +18,8 @@ import { EngineerCard, Engineer } from "@/components/EngineerCard"
 import { FilterSection } from "@/components/FilterSection"
 import { ActiveFilters } from "@/components/ActiveFilters"
 
+const PAGE_SIZE = 6
+
 export default function SearchPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [results, setResults] = useState<Engineer[]>([])
@@ -26,6 +28,7 @@ export default function SearchPage() {
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [locationFilter, setLocationFilter] = useState("")
   const [experienceFilter, setExperienceFilter] = useState("")
+  const [currentPage, setCurrentPage] = useState(1)
 
   const commonSkills = [
     "React", "Node.js", "Python", "TypeScript", "JavaScript", "AWS", "Java",
@@ -45,6 +48,7 @@ export default function SearchPage() {
       const response = await fetch(`/api/search?${params.toString()}`)
       const data = await response.json()
       setResults(data.results)
+      setCurrentPage(1)
     } catch (error) {
       console.error("Error searching engineers:", error)
     } finally {
@@ -61,6 +65,9 @@ export default function SearchPage() {
   useEffect(() => {
     handleSearch()
   }, [selectedSkills, locationFilter, experienceFilter])
+
+  const paginatedResults = results.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
+  const totalPages = Math.ceil(results.length / PAGE_SIZE)
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -145,11 +152,25 @@ export default function SearchPage() {
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
               </div>
             ) : results.length > 0 ? (
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {results.map((engineer) => (
-                  <EngineerCard key={engineer.id} engineer={engineer} />
-                ))}
-              </div>
+              <>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {paginatedResults.map((engineer) => (
+                    <EngineerCard key={engineer.id} engineer={engineer} />
+                  ))}
+                </div>
+                <div className="flex justify-center gap-2 pt-4">
+                  {Array.from({ length: totalPages }, (_, i) => (
+                    <Button
+                      key={i + 1}
+                      variant={currentPage === i + 1 ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setCurrentPage(i + 1)}
+                    >
+                      {i + 1}
+                    </Button>
+                  ))}
+                </div>
+              </>
             ) : (
               <div className="flex flex-col items-center justify-center p-8 md:p-12 text-center">
                 <Search className="h-12 w-12 text-muted-foreground mb-4" />
