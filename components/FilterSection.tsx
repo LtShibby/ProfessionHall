@@ -12,6 +12,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { ChevronDown, ChevronRight } from "lucide-react"
 
 export function FilterSection({
   skills,
@@ -42,6 +43,9 @@ export function FilterSection({
 }) {
   const [skillSearch, setSkillSearch] = useState("")
 
+  
+    const [skillsVisible, setSkillsVisible] = useState(false)
+
   const categorizedSkills: Record<string, string[]> = {
     "Front End": [
       "React", "Next.js", "Angular", "Vue.js", "TypeScript", "JavaScript", "CSS/SCSS", "Tailwind CSS", "UI/UX Design", "Storybook"
@@ -66,42 +70,58 @@ export function FilterSection({
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <h3 className="text-sm font-medium leading-none">Skills</h3>
-        <Input
-          placeholder="Search skills..."
-          value={skillSearch}
-          onChange={(e) => setSkillSearch(e.target.value)}
-        />
-        <Accordion type="multiple" className="w-full">
-          {Object.entries(categorizedSkills).map(([category, items]) => {
-            const filteredItems = items.filter((skill) =>
-              skill.toLowerCase().includes(skillSearch.toLowerCase())
-            )
-            if (filteredItems.length === 0) return null
-            return (
-              <AccordionItem value={category} key={category}>
-                <AccordionTrigger className="text-sm font-medium text-left">
-                  {category}
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-2">
-                    {filteredItems.map((skill) => (
-                      <div key={skill} className="flex items-center space-x-2">
-                        <Checkbox
-                          id={`${prefix}-skill-${skill}`}
-                          checked={selectedSkills.includes(skill)}
-                          onCheckedChange={() => toggleSkill(skill)}
-                        />
-                        <Label htmlFor={`${prefix}-skill-${skill}`}>{skill}</Label>
-                      </div>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            )
-          })}
-        </Accordion>
-      </div>
+  <button
+    className="flex items-center justify-between w-full text-sm font-medium leading-none"
+    onClick={() => setSkillsVisible(!skillsVisible)}
+  >
+    <span>Skills</span>
+    {skillsVisible ? (
+      <ChevronDown className="h-4 w-4" />
+    ) : (
+      <ChevronRight className="h-4 w-4" />
+    )}
+  </button>
+
+  {skillsVisible && (
+    <>
+      <Input
+        placeholder="Search skills..."
+        value={skillSearch}
+        onChange={(e) => setSkillSearch(e.target.value)}
+      />
+
+      <Accordion type="multiple" className="w-full">
+        {Object.entries(categorizedSkills).map(([category, items]) => {
+          const filteredItems = items.filter((skill) =>
+            skill.toLowerCase().includes(skillSearch.toLowerCase())
+          )
+          if (filteredItems.length === 0) return null
+          return (
+            <AccordionItem value={category} key={category}>
+              <AccordionTrigger className="text-sm font-medium text-left">
+                {category}
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="space-y-2">
+                  {filteredItems.map((skill) => (
+                    <div key={skill} className="flex items-center space-x-2">
+                      <Checkbox
+                        id={`${prefix}-skill-${skill}`}
+                        checked={selectedSkills.includes(skill)}
+                        onCheckedChange={() => toggleSkill(skill)}
+                      />
+                      <Label htmlFor={`${prefix}-skill-${skill}`}>{skill}</Label>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          )
+        })}
+      </Accordion>
+    </>
+  )}
+</div>
 
       <div className="space-y-2">
         <h3 className="text-sm font-medium">Minimum Experience (years)</h3>
