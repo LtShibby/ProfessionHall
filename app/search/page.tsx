@@ -17,6 +17,7 @@ import { NavBar } from "@/components/navbar"
 import { EngineerCard, Engineer } from "@/components/EngineerCard"
 import { FilterSection } from "@/components/FilterSection"
 import { ActiveFilters } from "@/components/ActiveFilters"
+import engineersData from "@/data/engineers.json"
 
 const PAGE_SIZE = 6
 
@@ -29,6 +30,7 @@ export default function SearchPage() {
   const [locationFilter, setLocationFilter] = useState("")
   const [experienceFilter, setExperienceFilter] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
+  const [suggestions, setSuggestions] = useState<string[]>([])
 
   const commonSkills = [
     "React", "Node.js", "Python", "TypeScript", "JavaScript", "AWS", "Java",
@@ -36,24 +38,57 @@ export default function SearchPage() {
     "PostgreSQL", "UI/UX", "CSS"
   ]
 
+  const normalize = (str: string) => str.toLowerCase()
+
   const handleSearch = async () => {
     setLoading(true)
     try {
-      const params = new URLSearchParams()
-      if (searchQuery) params.append("q", searchQuery)
-      if (selectedSkills.length > 0) params.append("skills", selectedSkills.join(","))
-      if (locationFilter) params.append("location", locationFilter)
-      if (experienceFilter) params.append("experience", experienceFilter)
+      const q = normalize(searchQuery)
+      const filtered = engineersData.engineers.filter((eng) => {
+        const matchesQuery = !q ||
+          normalize(eng.name).includes(q) ||
+          normalize(eng.title).includes(q) ||
+          normalize(eng.bio).includes(q) ||
+          eng.skills.some(skill => normalize(skill).includes(q)) ||
+          eng.projects.some(project =>
+            normalize(project.name).includes(q) ||
+            normalize(project.description).includes(q) ||
+            project.technologies.some(tech => normalize(tech).includes(q))
+          )
 
-      const response = await fetch(`/api/search?${params.toString()}`)
-      const data = await response.json()
-      setResults(data.results)
+        const matchesSkills = selectedSkills.every(skill => eng.skills.includes(skill))
+        const matchesLocation = !locationFilter || normalize(eng.location).includes(normalize(locationFilter))
+        const matchesExperience = !experienceFilter || eng.experience >= Number(experienceFilter)
+
+        return matchesQuery && matchesSkills && matchesLocation && matchesExperience
+      })
+      setResults(filtered)
       setCurrentPage(1)
     } catch (error) {
       console.error("Error searching engineers:", error)
     } finally {
       setLoading(false)
     }
+  }
+
+  const fetchSuggestions = async (query: string) => {
+    if (!query) return setSuggestions([])
+    const q = normalize(query)
+    const keywords = new Set<string>()
+
+    for (const eng of engineersData.engineers) {
+      if (normalize(eng.name).includes(q)) keywords.add(eng.name)
+      if (normalize(eng.title).includes(q)) keywords.add(eng.title)
+      if (normalize(eng.bio).includes(q)) keywords.add(eng.bio)
+      eng.skills.forEach(skill => normalize(skill).includes(q) && keywords.add(skill))
+      eng.projects.forEach(project => {
+        if (normalize(project.name).includes(q)) keywords.add(project.name)
+        if (normalize(project.description).includes(q)) keywords.add(project.description)
+        project.technologies.forEach(tech => normalize(tech).includes(q) && keywords.add(tech))
+      })
+    }
+
+    setSuggestions(Array.from(keywords).slice(0, 10))
   }
 
   const toggleSkill = (skill: string) => {
@@ -75,7 +110,6 @@ export default function SearchPage() {
       <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Find Talent</h2>
         <div className="flex flex-col md:grid md:grid-cols-[250px_1fr] gap-4">
-          {/* Mobile Filters */}
           <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" className="w-full md:hidden">
@@ -103,7 +137,6 @@ export default function SearchPage() {
             </SheetContent>
           </Sheet>
 
-          {/* Desktop Filter Panel */}
           <Card className="hidden md:block h-fit">
             <CardHeader>
               <CardTitle>Filters</CardTitle>
@@ -123,19 +156,34 @@ export default function SearchPage() {
             </CardContent>
           </Card>
 
-          {/* Results Section */}
           <div className="space-y-4">
-            <div className="flex gap-2">
+            <div className="flex flex-col gap-2">
               <Input
-                placeholder="Search by name, title, or bio..."
+                placeholder="Search by name, title, skill, or project..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value)
+                  fetchSuggestions(e.target.value)
+                }}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
               />
-              <Button onClick={handleSearch}>
-                <Search className="h-4 w-4 mr-2" />
-                Search
-              </Button>
+              {suggestions.length > 0 && (
+                <div className="border rounded-md p-2 shadow-sm bg-background max-h-48 overflow-auto">
+                  {suggestions.map((s, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        setSearchQuery(s)
+                        setSuggestions([])
+                        handleSearch()
+                      }}
+                      className="block w-full text-left text-sm py-1 px-2 hover:bg-muted rounded"
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             <ActiveFilters
