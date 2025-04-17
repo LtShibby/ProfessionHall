@@ -23,6 +23,8 @@ export function FilterSection({
   setExperienceFilter,
   workAuthFilter,
   setWorkAuthFilter,
+  availabilityFilter,
+  setAvailabilityFilter,
   prefix,
 }: {
   skills: string[]
@@ -34,6 +36,8 @@ export function FilterSection({
   setExperienceFilter: (value: string) => void
   workAuthFilter: string
   setWorkAuthFilter: (value: string) => void
+  availabilityFilter: string
+  setAvailabilityFilter: (value: string) => void
   prefix: string
 }) {
   const [skillSearch, setSkillSearch] = useState("")
@@ -123,6 +127,21 @@ export function FilterSection({
             <SelectItem value="OPT">OPT</SelectItem>
             <SelectItem value="CPT">CPT</SelectItem>
             <SelectItem value="Other">Other</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="space-y-2">
+        <h3 className="text-sm font-medium">Availability Type</h3>
+        <Select value={availabilityFilter} onValueChange={setAvailabilityFilter}>
+          <SelectTrigger className="w-full">
+            <SelectValue placeholder="Select availability" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="any">Any</SelectItem>
+            <SelectItem value="Full-time">Full-time</SelectItem>
+            <SelectItem value="Contract">Contract</SelectItem>
+            <SelectItem value="Part-time">Part-time</SelectItem>
           </SelectContent>
         </Select>
       </div>

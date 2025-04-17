@@ -30,6 +30,7 @@ export default function SearchPage() {
   const [locationFilter, setLocationFilter] = useState("")
   const [experienceFilter, setExperienceFilter] = useState("")
   const [workAuthFilter, setWorkAuthFilter] = useState("any")
+  const [availabilityFilter, setAvailabilityFilter] = useState("any")
   const [currentPage, setCurrentPage] = useState(1)
   const [suggestions, setSuggestions] = useState<string[]>([])
   const [locationSuggestions, setLocationSuggestions] = useState<string[]>([])
@@ -62,8 +63,9 @@ export default function SearchPage() {
         const matchesLocation = !locationFilter || normalize(eng.location).includes(normalize(locationFilter))
         const matchesExperience = !experienceFilter || eng.experience >= Number(experienceFilter)
         const matchesWorkAuth = workAuthFilter === "any" || normalize(eng.workAuthorization || "") === normalize(workAuthFilter)
+        const matchesAvailability = availabilityFilter === "any" || (eng.availability?.types || []).includes(availabilityFilter)
 
-        return matchesQuery && matchesSkills && matchesLocation && matchesExperience && matchesWorkAuth
+        return matchesQuery && matchesSkills && matchesLocation && matchesExperience && matchesWorkAuth && matchesAvailability
       })
       setResults(filtered)
       setCurrentPage(1)
@@ -112,7 +114,7 @@ export default function SearchPage() {
 
   useEffect(() => {
     handleSearch()
-  }, [selectedSkills, locationFilter, experienceFilter, workAuthFilter])
+  }, [selectedSkills, locationFilter, experienceFilter, workAuthFilter, availabilityFilter])
 
   const paginatedResults = results.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
   const totalPages = Math.ceil(results.length / PAGE_SIZE)
@@ -149,24 +151,10 @@ export default function SearchPage() {
                   setExperienceFilter={setExperienceFilter}
                   workAuthFilter={workAuthFilter}
                   setWorkAuthFilter={setWorkAuthFilter}
+                  availabilityFilter={availabilityFilter}
+                  setAvailabilityFilter={setAvailabilityFilter}
                   prefix="mobile"
                 />
-                {locationSuggestions.length > 0 && (
-                  <div className="border rounded-md p-2 shadow-sm bg-background max-h-48 overflow-auto">
-                    {locationSuggestions.map((loc, i) => (
-                      <button
-                        key={i}
-                        onClick={() => {
-                          setLocationFilter(loc)
-                          setLocationSuggestions([])
-                        }}
-                        className="block w-full text-left text-sm py-1 px-2 hover:bg-muted rounded"
-                      >
-                        {loc}
-                      </button>
-                    ))}
-                  </div>
-                )}
               </div>
             </SheetContent>
           </Sheet>
@@ -190,24 +178,10 @@ export default function SearchPage() {
                 setExperienceFilter={setExperienceFilter}
                 workAuthFilter={workAuthFilter}
                 setWorkAuthFilter={setWorkAuthFilter}
+                availabilityFilter={availabilityFilter}
+                setAvailabilityFilter={setAvailabilityFilter}
                 prefix="desktop"
               />
-              {locationSuggestions.length > 0 && (
-                <div className="border rounded-md p-2 shadow-sm bg-background max-h-48 overflow-auto">
-                  {locationSuggestions.map((loc, i) => (
-                    <button
-                      key={i}
-                      onClick={() => {
-                        setLocationFilter(loc)
-                        setLocationSuggestions([])
-                      }}
-                      className="block w-full text-left text-sm py-1 px-2 hover:bg-muted rounded"
-                    >
-                      {loc}
-                    </button>
-                  ))}
-                </div>
-              )}
             </CardContent>
           </Card>
 
@@ -250,6 +224,8 @@ export default function SearchPage() {
               setExperienceFilter={setExperienceFilter}
               workAuthFilter={workAuthFilter}
               setWorkAuthFilter={setWorkAuthFilter}
+              availabilityFilter={availabilityFilter}
+              setAvailabilityFilter={setAvailabilityFilter}
             />
 
             {loading ? (
