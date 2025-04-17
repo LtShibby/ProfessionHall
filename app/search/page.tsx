@@ -29,8 +29,10 @@ export default function SearchPage() {
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [locationFilter, setLocationFilter] = useState("")
   const [experienceFilter, setExperienceFilter] = useState("")
+  const [workAuthFilter, setWorkAuthFilter] = useState("any")
   const [currentPage, setCurrentPage] = useState(1)
   const [suggestions, setSuggestions] = useState<string[]>([])
+  const [locationSuggestions, setLocationSuggestions] = useState<string[]>([])
 
   const commonSkills = [
     "React", "Node.js", "Python", "TypeScript", "JavaScript", "AWS", "Java",
@@ -59,8 +61,9 @@ export default function SearchPage() {
         const matchesSkills = selectedSkills.every(skill => eng.skills.includes(skill))
         const matchesLocation = !locationFilter || normalize(eng.location).includes(normalize(locationFilter))
         const matchesExperience = !experienceFilter || eng.experience >= Number(experienceFilter)
+        const matchesWorkAuth = workAuthFilter === "any" || normalize(eng.workAuthorization || "") === normalize(workAuthFilter)
 
-        return matchesQuery && matchesSkills && matchesLocation && matchesExperience
+        return matchesQuery && matchesSkills && matchesLocation && matchesExperience && matchesWorkAuth
       })
       setResults(filtered)
       setCurrentPage(1)
@@ -91,6 +94,16 @@ export default function SearchPage() {
     setSuggestions(Array.from(keywords).slice(0, 10))
   }
 
+  const fetchLocationSuggestions = (input: string) => {
+    const q = normalize(input)
+    const matches = Array.from(new Set(
+      engineersData.engineers
+        .map(e => e.location)
+        .filter(loc => normalize(loc).includes(q))
+    ))
+    setLocationSuggestions(matches.slice(0, 10))
+  }
+
   const toggleSkill = (skill: string) => {
     setSelectedSkills((prev) =>
       prev.includes(skill) ? prev.filter((s) => s !== skill) : [...prev, skill]
@@ -99,7 +112,7 @@ export default function SearchPage() {
 
   useEffect(() => {
     handleSearch()
-  }, [selectedSkills, locationFilter, experienceFilter])
+  }, [selectedSkills, locationFilter, experienceFilter, workAuthFilter])
 
   const paginatedResults = results.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
   const totalPages = Math.ceil(results.length / PAGE_SIZE)
@@ -128,11 +141,32 @@ export default function SearchPage() {
                   selectedSkills={selectedSkills}
                   toggleSkill={toggleSkill}
                   locationFilter={locationFilter}
-                  setLocationFilter={setLocationFilter}
+                  setLocationFilter={value => {
+                    setLocationFilter(value)
+                    fetchLocationSuggestions(value)
+                  }}
                   experienceFilter={experienceFilter}
                   setExperienceFilter={setExperienceFilter}
+                  workAuthFilter={workAuthFilter}
+                  setWorkAuthFilter={setWorkAuthFilter}
                   prefix="mobile"
                 />
+                {locationSuggestions.length > 0 && (
+                  <div className="border rounded-md p-2 shadow-sm bg-background max-h-48 overflow-auto">
+                    {locationSuggestions.map((loc, i) => (
+                      <button
+                        key={i}
+                        onClick={() => {
+                          setLocationFilter(loc)
+                          setLocationSuggestions([])
+                        }}
+                        className="block w-full text-left text-sm py-1 px-2 hover:bg-muted rounded"
+                      >
+                        {loc}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </SheetContent>
           </Sheet>
@@ -148,11 +182,32 @@ export default function SearchPage() {
                 selectedSkills={selectedSkills}
                 toggleSkill={toggleSkill}
                 locationFilter={locationFilter}
-                setLocationFilter={setLocationFilter}
+                setLocationFilter={value => {
+                  setLocationFilter(value)
+                  fetchLocationSuggestions(value)
+                }}
                 experienceFilter={experienceFilter}
                 setExperienceFilter={setExperienceFilter}
+                workAuthFilter={workAuthFilter}
+                setWorkAuthFilter={setWorkAuthFilter}
                 prefix="desktop"
               />
+              {locationSuggestions.length > 0 && (
+                <div className="border rounded-md p-2 shadow-sm bg-background max-h-48 overflow-auto">
+                  {locationSuggestions.map((loc, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        setLocationFilter(loc)
+                        setLocationSuggestions([])
+                      }}
+                      className="block w-full text-left text-sm py-1 px-2 hover:bg-muted rounded"
+                    >
+                      {loc}
+                    </button>
+                  ))}
+                </div>
+              )}
             </CardContent>
           </Card>
 
@@ -193,6 +248,8 @@ export default function SearchPage() {
               setLocationFilter={setLocationFilter}
               experienceFilter={experienceFilter}
               setExperienceFilter={setExperienceFilter}
+              workAuthFilter={workAuthFilter}
+              setWorkAuthFilter={setWorkAuthFilter}
             />
 
             {loading ? (

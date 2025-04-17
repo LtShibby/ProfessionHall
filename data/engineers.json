@@ -6,29 +6,18 @@
       "title": "Medical sales representative",
       "location": "East Timothyville",
       "availability": {
-        "types": [
-          "Contract"
-        ],
+        "types": ["Contract"],
         "startDate": "2025-05-29",
         "note": "Perhaps clear foreign rate ask."
       },
       "experience": 9,
-      "skills": [
-        "MongoDB",
-        "Node.js",
-        "Go",
-        "Ruby"
-      ],
+      "skills": ["MongoDB", "Node.js", "Go", "Ruby"],
       "bio": "Toward far vote perform. Officer everything less letter hour billion likely.",
       "projects": [
         {
           "name": "Operative multi-tasking access",
-          "description": "Get strategy him charge policy. Early avoid appear worker difference suddenly plan.",
-          "technologies": [
-            "AWS",
-            "Next.js",
-            "MongoDB"
-          ],
+          "description": "Get strategy him charge policy...",
+          "technologies": ["AWS", "Next.js", "MongoDB"],
           "link": "http://www.roy.com/"
         }
       ],
@@ -38,7 +27,8 @@
         "resume": "/resumes/benjamin-butler-0.pdf",
         "portfolio": "https://benjamin-butler-0.dev"
       },
-      "image": "/profiles/benjamin-butler-0.jpg"
+      "image": "/profiles/benjamin-butler-0.jpg",
+      "workAuthorization": "US Citizen"
     },
     {
       "id": 2,
@@ -46,31 +36,18 @@
       "title": "Site engineer",
       "location": "Port Marcusmouth",
       "availability": {
-        "types": [
-          "Contract",
-          "Full-time"
-        ],
+        "types": ["Contract", "Full-time"],
         "startDate": "2025-05-18",
         "note": "Hear do rise young."
       },
       "experience": 7,
-      "skills": [
-        "Kubernetes",
-        "React",
-        "MongoDB",
-        "Java"
-      ],
-      "bio": "Response drive his foot billion talk according. Coach paper decide election class learn. Somebody section tend sign possible trip.",
+      "skills": ["Kubernetes", "React", "MongoDB", "Java"],
+      "bio": "Response drive his foot billion talk...",
       "projects": [
         {
           "name": "Fundamental multi-tasking utilization",
-          "description": "Likely radio camera record various within. Right continue bill senior. Current determine page then media wait.",
-          "technologies": [
-            "AWS",
-            "Express",
-            "PostgreSQL",
-            "Docker"
-          ],
+          "description": "Likely radio camera record...",
+          "technologies": ["AWS", "Express", "PostgreSQL", "Docker"],
           "link": "https://nash.com/"
         }
       ],
@@ -80,7 +57,8 @@
         "resume": "/resumes/patricia-flores-dds-1.pdf",
         "portfolio": "https://patricia-flores-dds-1.dev"
       },
-      "image": "/profiles/patricia-flores-dds-1.jpg"
+      "image": "/profiles/patricia-flores-dds-1.jpg",
+      "workAuthorization": "H1B"
     },
     {
       "id": 3,
@@ -88,33 +66,18 @@
       "title": "Financial adviser",
       "location": "Sarahfurt",
       "availability": {
-        "types": [
-          "Full-time",
-          "Contract"
-        ],
+        "types": ["Full-time", "Contract"],
         "startDate": "2025-04-22",
         "note": "Religious system minute sing."
       },
       "experience": 2,
-      "skills": [
-        "AWS",
-        "Java",
-        "PHP",
-        "TypeScript",
-        "Python",
-        "C#"
-      ],
-      "bio": "Table wear that worry. Somebody home message floor. Four billion what such list modern chance.",
+      "skills": ["AWS", "Java", "PHP", "TypeScript", "Python", "C#"],
+      "bio": "Table wear that worry...",
       "projects": [
         {
           "name": "Versatile systemic frame",
-          "description": "Most bit government meet group almost place. Ability human social report chair.",
-          "technologies": [
-            "PostgreSQL",
-            "Docker",
-            "AWS",
-            "Next.js"
-          ],
+          "description": "Most bit government meet...",
+          "technologies": ["PostgreSQL", "Docker", "AWS", "Next.js"],
           "link": "http://wang.com/"
         }
       ],
@@ -124,7 +87,8 @@
         "resume": "/resumes/shelley-torres-2.pdf",
         "portfolio": "https://shelley-torres-2.dev"
       },
-      "image": "/profiles/shelley-torres-2.jpg"
+      "image": "/profiles/shelley-torres-2.jpg",
+      "workAuthorization": "OPT"
     },
     {
       "id": 4,
@@ -132,29 +96,18 @@
       "title": "Risk analyst",
       "location": "Kimberlybury",
       "availability": {
-        "types": [
-          "Contract"
-        ],
+        "types": ["Contract"],
         "startDate": "2025-05-04",
         "note": "Live direction firm market Congress hard."
       },
       "experience": 15,
-      "skills": [
-        "React",
-        "Ruby",
-        "Docker",
-        "Python"
-      ],
-      "bio": "Art lay add budget. Shake middle television maybe blue nor need. Front skill drug staff well administration evidence degree.",
+      "skills": ["React", "Ruby", "Docker", "Python"],
+      "bio": "Art lay add budget...",
       "projects": [
         {
           "name": "Inverse eco-centric utilization",
-          "description": "Choose economy leg face than. Man more under main drug. Important trip hard again.",
-          "technologies": [
-            "Kubernetes",
-            "Next.js",
-            "Redis"
-          ],
+          "description": "Choose economy leg face than...",
+          "technologies": ["Kubernetes", "Next.js", "Redis"],
           "link": "https://walton.com/"
         }
       ],
@@ -164,7 +117,8 @@
         "resume": "/resumes/susan-mitchell-3.pdf",
         "portfolio": "https://susan-mitchell-3.dev"
       },
-      "image": "/profiles/susan-mitchell-3.jpg"
+      "image": "/profiles/susan-mitchell-3.jpg",
+      "workAuthorization": "Green Card"
     },
     {
       "id": 5,
@@ -172,34 +126,18 @@
       "title": "Education administrator",
       "location": "West Randallhaven",
       "availability": {
-        "types": [
-          "Contract"
-        ],
+        "types": ["Contract"],
         "startDate": "2025-04-27",
         "note": "Majority arm break memory various red note."
       },
       "experience": 10,
-      "skills": [
-        "C#",
-        "Node.js",
-        "Docker",
-        "AWS",
-        "Python",
-        "TypeScript",
-        "React",
-        "Ruby"
-      ],
-      "bio": "Significant forget type special at effect. Most look check over. Another allow think discussion evidence remember.",
+      "skills": ["C#", "Node.js", "Docker", "AWS", "Python", "TypeScript", "React", "Ruby"],
+      "bio": "Significant forget type special at effect...",
       "projects": [
         {
           "name": "Total systematic conglomeration",
-          "description": "Laugh parent she research. Bar hundred language.",
-          "technologies": [
-            "Next.js",
-            "Azure",
-            "React",
-            "AWS"
-          ],
+          "description": "Laugh parent she research...",
+          "technologies": ["Next.js", "Azure", "React", "AWS"],
           "link": "http://walls-carson.com/"
         }
       ],
@@ -209,7 +147,8 @@
         "resume": "/resumes/rebecca-miles-4.pdf",
         "portfolio": "https://rebecca-miles-4.dev"
       },
-      "image": "/profiles/rebecca-miles-4.jpg"
+      "image": "/profiles/rebecca-miles-4.jpg",
+      "workAuthorization": "CPT"
     },
     {
       "id": 6,
