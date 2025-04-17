@@ -1,6 +1,48 @@
 {
   "engineers": [
     {
+      "id": 100,
+      "name": "Sai Bharath Padigala",
+      "title": "AI/ML Engineer",
+      "location": "New York, New York",
+      "availability": {
+        "types": ["Full Time", "Contract"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 3,
+      "skills": [
+        "React", "Next.js", "TypeScript", "JavaScript", "CSS/SCSS", "Tailwind CSS", "UI/UX Design", "Storybook",
+        "Node.js", "Express", "Python", "Django", "Flask", "Java", "Spring Boot", "Go", "Ruby on Rails", "PHP",
+        "AWS", "GCP", "Azure", "Docker", "Kubernetes", "CI/CD Pipelines", "Terraform",
+        "PostgreSQL", "MySQL", "MongoDB", "Redis", "Elasticsearch", "GraphQL", "Neo4j",
+        "Pandas", "PyTorch", "TensorFlow", "Scikit-learn", "Airflow", "Spark",
+        "REST API Design", "TDD / Unit Testing", "Git / GitHub", "Agile / Scrum", "System Design", "Microservices Architecture",
+        "Generative AI", "LLM Fine-tuning", "Neuromorphic Computing & Bio-inspired AI", "Federated Learning", "Reinforcement Learning", "Apache Kafka", "LangChain"
+      ],
+      "bio": "AI/ML Engineer with 3+ years of experience building production-ready AI systems in credit risk modeling, computer vision, generative AI, and recommendation engines. Proven track record of deploying scalable machine learning pipelines and optimizing large language models (LLMs) across AWS, GCP, and Azure. Adept in Python, PyTorch, Kubernetes, and MLOps, with a Master’s in Computer Science from SUNY Buffalo. Passionate about innovation at the intersection of deep learning, NLP, and distributed systems.",
+      "projects": [
+        {
+          "name": "Smart Traffic Management System",
+          "description": "Designed and deployed an AI-based system using reinforcement learning and computer vision to optimize real-time traffic light control. Integrated IoT sensors and cameras to monitor vehicle and pedestrian flow, enabling dynamic signal adjustment. Deployed the system in a simulated urban environment, achieving a 40% reduction in traffic congestion and 25% decrease in commute time for over 50,000 commuters.",
+          "technologies": ["Reinforcement Learning", "Computer Vision", "OpenCV", "Python", "IoT", "TensorFlow", "Data Engineering"]
+        },
+        {
+          "name": "AI-Driven Personal Finance Assistant",
+          "description": "Built a voice- and text-based AI assistant that helps users manage budgets, categorize transactions, and get tailored financial advice. Used NLP techniques to parse natural language queries and provide personalized recommendations, boosting user engagement by 40% and increasing savings by an average of 15%.",
+          "technologies": ["Natural Language Processing", "Python", "Machine Learning", "Scikit-learn", "React", "MongoDB", "Dialog Management"]
+        }
+      ],
+      "links": {
+        "github": "http://github.com/BharathSai3693",
+        "linkedin": "http://linkedin.com/in/bharath3693/",
+        "resume": "https://drive.google.com/file/d/1aktXVTecWx1XwF5MDLLA45X5TsApnd_a/view?usp=share_link",
+        "portfolio": "http://bharath-one.vercel.app"
+      },
+      "image": null,
+      "workAuthorization": "F-1 OPT / CPT"
+    },
+    {
       "id": 1,
       "name": "Benjamin Butler",
       "title": "Medical sales representative",
