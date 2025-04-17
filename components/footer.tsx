@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Github, Linkedin, Twitter } from "lucide-react";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaDiscord, FaXTwitter } from "react-icons/fa6";
 
 export function Footer() {
   return (
@@ -28,6 +28,9 @@ export function Footer() {
 
           {/* Right Side: Social Icons */}
           <div className="flex space-x-4">
+          <Link href="https://discord.gg/txYVxN2Hzy" className="text-muted-foreground hover:text-primary transition">
+              <FaDiscord size={20} />
+            </Link>
             <Link href="https://x.com/WozWize" className="text-muted-foreground hover:text-primary transition">
               <FaXTwitter size={20} />
             </Link>
@@ -37,6 +40,8 @@ export function Footer() {
           </div>
         </div>
 
+
+        
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} ProfessionHall. All rights reserved.</p>
