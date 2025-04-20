@@ -107,6 +107,11 @@ export function FilterSection({
       "Agile / Scrum",
       "System Design",
       "Microservices Architecture",
+      "Team Management",  
+      "Project Leadership",
+      "Client Relations",
+      "Strategic Planning",
+      "Web Development Oversight",
     ],
   };
 

@@ -46,6 +46,45 @@ export type Engineer = {
   workAuthorization?: string
 }
 
+const workAuthStyles: Record<string, { header: string; badge: string }> = {
+  "U.S. Citizen": {
+    header: "border-t-4 border-green-300",
+    badge: "bg-green-100 text-green-800",
+  },
+  "U.S. Green Card Holder (Permanent Resident)": {
+    header: "border-t-4 border-emerald-300",
+    badge: "bg-emerald-100 text-emerald-800",
+  },
+  "H-1B Visa Holder": {
+    header: "border-t-4 border-yellow-300",
+    badge: "bg-yellow-100 text-yellow-800",
+  },
+  "F-1 OPT / CPT": {
+    header: "border-t-4 border-blue-300",
+    badge: "bg-blue-100 text-blue-800",
+  },
+  "TN Visa": {
+    header: "border-t-4 border-indigo-300",
+    badge: "bg-indigo-100 text-indigo-800",
+  },
+  "Singapore Citizen": {
+    header: "border-t-4 border-red-300",
+    badge: "bg-red-100 text-red-800",
+  },
+  "Authorized to work in Singapore": {
+    header: "border-t-4 border-pink-300",
+    badge: "bg-pink-100 text-pink-800",
+  },
+  "Authorized to work in the U.S.": {
+    header: "border-t-4 border-gray-300",
+    badge: "bg-gray-100 text-gray-800",
+  },
+  Other: {
+    header: "border-t-4 border-slate-300",
+    badge: "bg-slate-100 text-slate-800",
+  },
+}
+
 export function EngineerCard({ engineer }: { engineer: Engineer }) {
   const [showAllSkills, setShowAllSkills] = useState(false)
   const [showFullBio, setShowFullBio] = useState(false)
@@ -61,19 +100,9 @@ export function EngineerCard({ engineer }: { engineer: Engineer }) {
   const skillLimit = 12
   const visibleSkills = showAllSkills ? engineer.skills : engineer.skills.slice(0, skillLimit)
 
-  const headerColor = clsx({
-    "border-t-4 border-green-300": engineer.workAuthorization === "US Citizen",
-    "border-t-4 border-yellow-300": engineer.workAuthorization === "H1B",
-    "border-t-4 border-blue-300": engineer.workAuthorization === "OPT",
-    "border-t-4 border-purple-300": engineer.workAuthorization === "CPT",
-  })
-
-  const badgeColor = clsx("text-xs", {
-    "bg-green-100 text-green-800": engineer.workAuthorization === "US Citizen",
-    "bg-yellow-100 text-yellow-800": engineer.workAuthorization === "H1B",
-    "bg-blue-100 text-blue-800": engineer.workAuthorization === "OPT",
-    "bg-purple-100 text-purple-800": engineer.workAuthorization === "CPT",
-  })
+  const workAuth = engineer.workAuthorization || "Other"
+  const headerColor = workAuthStyles[workAuth]?.header
+  const badgeColor = clsx("text-xs", workAuthStyles[workAuth]?.badge)
 
   return (
     <Card key={engineer.id} className={clsx("flex flex-col", headerColor)}>
