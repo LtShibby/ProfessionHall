@@ -1,6 +1,60 @@
 {
   "engineers": [
     {
+      "id": 106,
+      "name": "Jean DeZonia",
+      "title": "Backend Engineer",
+      "location": "San Antonio, Texas, United States",
+      "availability": {
+        "types": ["Full Time", "Contract"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 10,
+      "skills": [
+        "React",
+        "JavaScript",
+        "CSS/SCSS",
+        "UI/UX Design",
+        "Python",
+        "Java",
+        "Spring Boot",
+        "AWS",
+        "GCP",
+        "CI/CD Pipelines",
+        "Terraform",
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "Elasticsearch",
+        "REST API Design",
+        "TDD / Unit Testing",
+        "Git / GitHub",
+        "Agile / Scrum",
+        "System Design",
+        "Microservices Architecture",
+        "Prompt Engineering",
+        "OpenAI APIs"
+      ],
+      "bio": "Versatile backend engineer with 10+ years of hands-on experience in Java, cloud platforms (GCP, AWS), and large-scale system design. Proven track record delivering secure, scalable software for government and enterprise clients. Skilled in Spring Boot, REST APIs, CI/CD pipelines, and backend automation. On the side, actively building GenAI tools using OpenAI APIs and prompt engineering, bringing a future-focused mindset to modern software teams.",
+      "projects": [
+        {
+          "name": "GenAI Chatbot Backend",
+          "description": "Built a Java-based chatbot using Spring Boot that connects to OpenAI’s GPT API. The backend supports multi-input handling, dynamic response generation, and extensible endpoints for real-world use cases like service suggestions and quote generation. Designed with modularity and scalability in mind, the system can integrate logic for service upsells, user profiling, and media uploads.",
+          "technologies": ["Java", "Spring Boot", "REST APIs", "OpenAI API", "Prompt Engineering", "JSON", "GitHub", "CI/CD"],
+          "link": "https://github.com/Allusion3/chatbot"
+        }
+      ],
+      "links": {
+        "github": "https://github.com/Allusion3",
+        "linkedin": "https://www.linkedin.com/dezonia",
+        "resume": "https://drive.google.com/file/d/1m577Ku_9HiDRzuyLFnoml7jTI-OAgbiQ/view?usp=sharing",
+        "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["U.S. Citizen"]
+    },
+    {
       "id": 100,
       "name": "Sai Bharath Padigala",
       "title": "AI/ML Engineer",
@@ -194,6 +248,50 @@
       },
       "image": null,
       "workAuthorization": ["H-1B Visa Holder"]
+    },
+    {
+      "id": 105,
+      "name": "Eric Head",
+      "title": "Game Designer / Digital Artist",
+      "location": "Buffalo, New York, USA",
+      "availability": {
+        "types": ["Full Time"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 6,
+      "skills": [
+        "JavaScript",
+        "Python",
+        "Java",
+        "Git / GitHub",
+        "Godot",
+        "Unity",
+        "Microsoft Office"
+      ],
+      "bio": "My name is Eric Head, and I have a bachelor's degree in Media Studies and Production as well as a certificate in Game Design from the University at Buffalo in New York. I have a wide array of skills nurtured from both personal and professional experience— ranging from game design, coding, digital art, and computer skills to customer service, inventory management, and installation work. I'm a very analytical and detail-oriented worker who is able to thrive either independently or as part of a team, and am always looking to learn, grow, and perfect.",
+      "projects": [
+        {
+          "name": "Element: Jake N' Wenny",
+          "description": "Short Flash game made in college, programmed from scratch.",
+          "technologies": ["Coding", "Programming", "Digital Art", "Level Design", "Game Design", "Writing", "Character Design"],
+          "link": "https://www.newgrounds.com/portal/view/915997"
+        },
+        {
+          "name": "Nurse Florence, Tell Me About the Small Intestines",
+          "description": "Illustrated Children's Book published by Dow Creative Enterprises.",
+          "technologies": ["Digital Art", "Reference Usage", "Biology"],
+          "link": "https://www.lulu.com/search?sortBy=RELEVANCE&page=1&q=nurse+florence+head&pageSize=10&adult_audience_rating=00"
+        }
+      ],
+      "links": {
+        "github": null,
+        "linkedin": "https://www.linkedin.com/in/eric-head-554253260/",
+        "resume": "https://docs.google.com/document/d/1hu5Jm1yEtlHxiLZDMwB4wb90xGzHsdTp1ryXTKlzWdI/edit?usp=sharing",
+        "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["U.S. Citizen"]
     }
   ]
 }
