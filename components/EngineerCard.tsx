@@ -43,7 +43,7 @@ export type Engineer = {
     portfolio?: string
   }
   image?: string
-  workAuthorization?: string
+  workAuthorization?: string[] // CHANGED to array
 }
 
 const workAuthStyles: Record<string, { header: string; badge: string }> = {
@@ -79,6 +79,10 @@ const workAuthStyles: Record<string, { header: string; badge: string }> = {
     header: "border-t-4 border-gray-300",
     badge: "bg-gray-100 text-gray-800",
   },
+  "Indonesia Citizen": {
+    header: "border-t-4 border-amber-300",
+    badge: "bg-amber-100 text-amber-800",
+  },
   Other: {
     header: "border-t-4 border-slate-300",
     badge: "bg-slate-100 text-slate-800",
@@ -100,9 +104,15 @@ export function EngineerCard({ engineer }: { engineer: Engineer }) {
   const skillLimit = 12
   const visibleSkills = showAllSkills ? engineer.skills : engineer.skills.slice(0, skillLimit)
 
-  const workAuth = engineer.workAuthorization || "Other"
+  const workAuth = engineer.workAuthorization?.[0] || "Other"
   const headerColor = workAuthStyles[workAuth]?.header
-  const badgeColor = clsx("text-xs", workAuthStyles[workAuth]?.badge)
+
+  const workAuthList = Array.isArray(engineer.workAuthorization)
+  ? engineer.workAuthorization
+  : engineer.workAuthorization
+    ? [engineer.workAuthorization]
+    : []
+
 
   return (
     <Card key={engineer.id} className={clsx("flex flex-col", headerColor)}>
@@ -141,11 +151,20 @@ export function EngineerCard({ engineer }: { engineer: Engineer }) {
       </CardHeader>
 
       <CardContent className="grid gap-3 flex-1">
-        {engineer.workAuthorization && (
+        {engineer.workAuthorization && engineer.workAuthorization.length > 0 && (
           <div>
-          <h4 className="text-sm font-medium mb-1">Work Authorization</h4>
-          <Badge className={badgeColor}>{engineer.workAuthorization}</Badge>
-        </div>
+            <h4 className="text-sm font-medium mb-1">Work Authorization</h4>
+            <div className="flex flex-wrap gap-1">
+              {workAuthList.map((auth) => (
+                <Badge
+                  key={auth}
+                  className={clsx("text-xs", workAuthStyles[auth]?.badge || workAuthStyles["Other"].badge)}
+                >
+                  {auth}
+                </Badge>
+              ))}
+            </div>
+          </div>
         )}
 
         <div className="text-sm text-muted-foreground">

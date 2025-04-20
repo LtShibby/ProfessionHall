@@ -188,11 +188,15 @@ export function FilterSection({
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="any">Any</SelectItem>
-            <SelectItem value="US Citizen">US Citizen</SelectItem>
-            <SelectItem value="Green Card">Green Card</SelectItem>
-            <SelectItem value="H1B">H1B</SelectItem>
-            <SelectItem value="OPT">OPT</SelectItem>
-            <SelectItem value="CPT">CPT</SelectItem>
+            <SelectItem value="U.S. Citizen">U.S. Citizen</SelectItem>
+            <SelectItem value="U.S. Green Card Holder (Permanent Resident)">U.S. Green Card Holder (Permanent Resident)</SelectItem>
+            <SelectItem value="H-1B Visa Holder">H-1B Visa Holder</SelectItem>
+            <SelectItem value="F-1 OPT / CPT">F-1 OPT / CPT</SelectItem>
+            <SelectItem value="TN Visa">TN Visa</SelectItem>
+            <SelectItem value="Singapore Citizen">Singapore Citizen</SelectItem>
+            <SelectItem value="Authorized to work in Singapore">Authorized to work in Singapore</SelectItem>
+            <SelectItem value="Authorized to work in the U.S.">Authorized to work in the U.S.</SelectItem>
+            <SelectItem value="Indonesia Citizen">Indonesia Citizen</SelectItem>
             <SelectItem value="Other">Other</SelectItem>
           </SelectContent>
         </Select>

@@ -40,7 +40,7 @@
         "portfolio": "http://bharath-one.vercel.app"
       },
       "image": null,
-      "workAuthorization": "F-1 OPT / CPT"
+      "workAuthorization": ["F-1 OPT / CPT"]
     },
     {
       "id": 101,
@@ -82,7 +82,7 @@
         "portfolio": "https://smituplenchwar.vercel.app/"
       },
       "image": null,
-      "workAuthorization": "F-1 OPT / CPT"
+      "workAuthorization": ["F-1 OPT / CPT"]
     },
     {
       "id": 102,
@@ -124,7 +124,7 @@
         "resume": "https://drive.google.com/file/d/1Uuhb5TBYipxg1i9wdWIdcDjaqNOZqnSv/view?usp=sharing"
       },
       "image": null,
-      "workAuthorization": "F-1 OPT / CPT"
+      "workAuthorization": ["F-1 OPT / CPT"]
     },
     {
       "id": 103,
@@ -164,7 +164,7 @@
         "resume": "https://drive.google.com/file/d/1YrrOpcIUmKtjO--BEZM2mcu5W1nkFwt3/view?usp=sharing"
       },
       "image": null,
-      "workAuthorization": "Authorized to work in Singapore"
+      "workAuthorization": ["Authorized to work in Singapore", "Indonesia Citizen"]
     },
     {
       "id": 104,
@@ -193,7 +193,7 @@
         "portfolio": "https://www.maptech.agency"
       },
       "image": null,
-      "workAuthorization": "H-1B Visa Holder"
+      "workAuthorization": ["H-1B Visa Holder"]
     }
   ]
 }

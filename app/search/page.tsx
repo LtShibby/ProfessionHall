@@ -62,7 +62,10 @@ export default function SearchPage() {
         const matchesSkills = selectedSkills.every(skill => eng.skills.includes(skill))
         const matchesLocation = !locationFilter || normalize(eng.location).includes(normalize(locationFilter))
         const matchesExperience = !experienceFilter || eng.experience >= Number(experienceFilter)
-        const matchesWorkAuth = workAuthFilter === "any" || normalize(eng.workAuthorization || "") === normalize(workAuthFilter)
+        const matchesWorkAuth =
+          workAuthFilter === "any" ||
+          (Array.isArray(eng.workAuthorization) &&
+            eng.workAuthorization.some(auth => normalize(auth) === normalize(workAuthFilter)))
         const matchesAvailability = availabilityFilter === "any" || (eng.availability?.types || []).includes(availabilityFilter)
 
         return matchesQuery && matchesSkills && matchesLocation && matchesExperience && matchesWorkAuth && matchesAvailability
