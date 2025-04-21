@@ -23,7 +23,7 @@ export type Project = {
 }
 
 export type Engineer = {
-  id: string
+  id: string | number
   name: string
   title: string
   skills: string[]

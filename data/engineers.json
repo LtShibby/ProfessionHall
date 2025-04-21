@@ -1,6 +1,50 @@
 {
   "engineers": [
     {
+      "id": 108,
+      "name": "Ross Tomsic",
+      "title": "Lord of DevOps and Almighty Pineapple God",
+      "skills": [
+          "React", "Next.js", "TypeScript", "JavaScript", "Node.js", "Python", "Django",
+          "Flask", "Java", "AWS", "GCP", "Azure", "Docker", "Kubernetes", "CI/CD Pipelines",
+          "Terraform", "EVERYTHING", "PostgreSQL", "Elasticsearch", "REST API Design",
+          "TDD / Unit Testing", "Git / GitHub", "Agile / Scrum", "System Design", "Microservices Architecture"
+      ],
+      "experience": 12,
+      "location": "Chesterfield, Michigan, United States",
+      "availability": {
+        "types": ["Full Time", "Contract"],
+        "startDate": null,
+        "note": "Sure!"
+      },
+      "bio": "AI overlords",
+      "projects": [
+          {
+              "name": "Projects have names?",
+              "description": "Built isolated AWS EKS cluster for CDC projects, with observability and monitoring, and associated storage, load balancing, etc.",
+              "technologies": [
+                  "AWS", "Helm", "Kubernetes", "Patience", "Agile", "Technical Writing", "Prometheus",
+                  "Loki integration", "Terraform"
+              ]
+          },
+          {
+              "name": "Docker based development",
+              "description": "Wrote Gitlab API cli tool from scratch with Python in a docker tool. Integrated this with Terraform and Ansible into a Gitlab environment deployment hub.",
+              "technologies": [
+                  "Gitlab", "Terraform", "Ansible", "Python", "AWS", "Docker", "Kubernetes",
+                  "more Patience", "Documentation", "source code dissecting"
+              ]
+          }
+      ],
+      "links": {
+          "github": "https://github.com/R055LE",
+          "linkedin": "https://linkedin.com/in/rosstomsic",
+          "resume": "https://docs.google.com/document/d/19cLAR6c6q1Mjam-3DkQPeJXBi7jgKIQY7jqW3IqFtqI"
+      },
+      "workAuthorization": ["U.S. Citizen"],
+      "willingToRelocate": "No"
+  },
+  {
       "id": 106,
       "name": "Jean DeZonia",
       "title": "Backend Engineer",
