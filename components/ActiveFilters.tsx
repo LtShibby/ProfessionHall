@@ -14,6 +14,8 @@ export function ActiveFilters({
   setWorkAuthFilter,
   availabilityFilter,
   setAvailabilityFilter,
+  willingToRelocateFilter,
+  setWillingToRelocateFilter,
 }: {
   selectedSkills: string[]
   toggleSkill: (skill: string) => void
@@ -25,13 +27,16 @@ export function ActiveFilters({
   setWorkAuthFilter: (value: string) => void
   availabilityFilter: string
   setAvailabilityFilter: (value: string) => void
+  willingToRelocateFilter: string
+  setWillingToRelocateFilter: (value: string) => void
 }) {
   const hasFilters =
     selectedSkills.length > 0 ||
     locationFilter ||
     experienceFilter ||
     (workAuthFilter && workAuthFilter !== "any") ||
-    (availabilityFilter && availabilityFilter !== "any")
+    (availabilityFilter && availabilityFilter !== "any") ||
+    (willingToRelocateFilter && willingToRelocateFilter !== "any")
 
   const renderClearButton = (onClick: () => void) => (
     <button
@@ -99,6 +104,13 @@ export function ActiveFilters({
               {renderClearButton(() => setAvailabilityFilter("any"))}
             </Badge>
           )}
+
+        {willingToRelocateFilter && willingToRelocateFilter !== "any" && (
+          <Badge variant="secondary" className="flex items-center gap-1">
+            Willing to Relocate: {willingToRelocateFilter}
+            {renderClearButton(() => setWillingToRelocateFilter("any"))}
+          </Badge>
+        )}
         </div>
       ) : (
         <span className="text-sm text-muted-foreground">None</span>

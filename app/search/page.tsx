@@ -34,6 +34,7 @@ export default function SearchPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const [suggestions, setSuggestions] = useState<string[]>([])
   const [locationSuggestions, setLocationSuggestions] = useState<string[]>([])
+  const [willingToRelocateFilter, setWillingToRelocateFilter] = useState("any")
 
   const commonSkills = [
     "React", "Node.js", "Python", "TypeScript", "JavaScript", "AWS", "Java",
@@ -67,8 +68,9 @@ export default function SearchPage() {
           (Array.isArray(eng.workAuthorization) &&
             eng.workAuthorization.some(auth => normalize(auth) === normalize(workAuthFilter)))
         const matchesAvailability = availabilityFilter === "any" || (eng.availability?.types || []).includes(availabilityFilter)
+        const matchesWillingToRelocate = willingToRelocateFilter === "any" || eng.willingToRelocate === willingToRelocateFilter
 
-        return matchesQuery && matchesSkills && matchesLocation && matchesExperience && matchesWorkAuth && matchesAvailability
+        return matchesQuery && matchesSkills && matchesLocation && matchesExperience && matchesWorkAuth && matchesAvailability && matchesWillingToRelocate
       })
       setResults(filtered)
       setCurrentPage(1)
@@ -117,7 +119,7 @@ export default function SearchPage() {
 
   useEffect(() => {
     handleSearch()
-  }, [selectedSkills, locationFilter, experienceFilter, workAuthFilter, availabilityFilter])
+  }, [selectedSkills, locationFilter, experienceFilter, workAuthFilter, availabilityFilter, willingToRelocateFilter])
 
   const paginatedResults = results.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
   const totalPages = Math.ceil(results.length / PAGE_SIZE)
@@ -156,6 +158,10 @@ export default function SearchPage() {
                   setWorkAuthFilter={setWorkAuthFilter}
                   availabilityFilter={availabilityFilter}
                   setAvailabilityFilter={setAvailabilityFilter}
+                  willingToRelocateFilter={willingToRelocateFilter}
+                  setWillingToRelocateFilter={setWillingToRelocateFilter}
+                  locationSuggestions={locationSuggestions}
+                  fetchLocationSuggestions={fetchLocationSuggestions}
                   prefix="mobile"
                 />
               </div>
@@ -183,6 +189,10 @@ export default function SearchPage() {
                 setWorkAuthFilter={setWorkAuthFilter}
                 availabilityFilter={availabilityFilter}
                 setAvailabilityFilter={setAvailabilityFilter}
+                willingToRelocateFilter={willingToRelocateFilter}
+                setWillingToRelocateFilter={setWillingToRelocateFilter}
+                locationSuggestions={locationSuggestions}
+                fetchLocationSuggestions={fetchLocationSuggestions}
                 prefix="desktop"
               />
             </CardContent>
@@ -229,6 +239,8 @@ export default function SearchPage() {
               setWorkAuthFilter={setWorkAuthFilter}
               availabilityFilter={availabilityFilter}
               setAvailabilityFilter={setAvailabilityFilter}
+              willingToRelocateFilter={willingToRelocateFilter}
+              setWillingToRelocateFilter={setWillingToRelocateFilter}
             />
 
             {loading ? (

@@ -31,6 +31,10 @@ export function FilterSection({
   setWorkAuthFilter,
   availabilityFilter,
   setAvailabilityFilter,
+  willingToRelocateFilter,
+  setWillingToRelocateFilter,
+  locationSuggestions,
+  fetchLocationSuggestions,
   prefix,
 }: {
   skills: string[];
@@ -44,6 +48,10 @@ export function FilterSection({
   setWorkAuthFilter: (value: string) => void;
   availabilityFilter: string;
   setAvailabilityFilter: (value: string) => void;
+  willingToRelocateFilter: string;
+  setWillingToRelocateFilter: (value: string) => void;
+  locationSuggestions: string[]
+  fetchLocationSuggestions: (value: string) => void
   prefix: string;
 }) {
   const [skillSearch] = useState("");
@@ -196,6 +204,7 @@ export function FilterSection({
             <SelectItem value="Singapore Citizen">Singapore Citizen</SelectItem>
             <SelectItem value="Authorized to work in Singapore">Authorized to work in Singapore</SelectItem>
             <SelectItem value="Authorized to work in the U.S.">Authorized to work in the U.S.</SelectItem>
+            <SelectItem value="Authorized to work in Canada">Authorized to work in Canada</SelectItem>
             <SelectItem value="Indonesia Citizen">Indonesia Citizen</SelectItem>
             <SelectItem value="Other">Other</SelectItem>
           </SelectContent>
@@ -220,13 +229,34 @@ export function FilterSection({
         </Select>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2 relative">
         <h3 className="text-sm font-medium">Location</h3>
         <Input
           placeholder="Filter by location"
           value={locationFilter}
-          onChange={(e) => setLocationFilter(e.target.value)}
+          onChange={(e) => {
+            setLocationFilter(e.target.value)
+            fetchLocationSuggestions(e.target.value)
+          }}
         />
+      </div>
+
+      <div className="space-y-2">
+        <h3 className="text-sm font-medium">Willing to Relocate</h3>
+        <Select
+          value={willingToRelocateFilter}
+          onValueChange={setWillingToRelocateFilter}
+        >
+          <SelectTrigger className="w-full">
+            <SelectValue placeholder="Select willingness" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="any">Any</SelectItem>
+            <SelectItem value="Yes">Yes</SelectItem>
+            <SelectItem value="No">No</SelectItem>
+            <SelectItem value="Maybe">Maybe</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
     </div>
   );

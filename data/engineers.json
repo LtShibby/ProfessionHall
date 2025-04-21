@@ -52,7 +52,8 @@
         "portfolio": null
       },
       "image": null,
-      "workAuthorization": ["U.S. Citizen"]
+      "workAuthorization": ["U.S. Citizen"],
+      "willingToRelocate": "No"
     },
     {
       "id": 100,
@@ -94,7 +95,8 @@
         "portfolio": "http://bharath-one.vercel.app"
       },
       "image": null,
-      "workAuthorization": ["F-1 OPT / CPT"]
+      "workAuthorization": ["F-1 OPT / CPT"],
+      "willingToRelocate": "Yes"
     },
     {
       "id": 101,
@@ -136,7 +138,8 @@
         "portfolio": "https://smituplenchwar.vercel.app/"
       },
       "image": null,
-      "workAuthorization": ["F-1 OPT / CPT"]
+      "workAuthorization": ["F-1 OPT / CPT"],
+      "willingToRelocate": "Yes"
     },
     {
       "id": 102,
@@ -178,7 +181,8 @@
         "resume": "https://drive.google.com/file/d/1Uuhb5TBYipxg1i9wdWIdcDjaqNOZqnSv/view?usp=sharing"
       },
       "image": null,
-      "workAuthorization": ["F-1 OPT / CPT"]
+      "workAuthorization": ["F-1 OPT / CPT"],
+      "willingToRelocate": "Yes"
     },
     {
       "id": 103,
@@ -218,7 +222,8 @@
         "resume": "https://drive.google.com/file/d/1YrrOpcIUmKtjO--BEZM2mcu5W1nkFwt3/view?usp=sharing"
       },
       "image": null,
-      "workAuthorization": ["Authorized to work in Singapore", "Indonesia Citizen"]
+      "workAuthorization": ["Authorized to work in Singapore", "Indonesia Citizen"],
+      "willingToRelocate": "Yes"
     },
     {
       "id": 104,
@@ -247,7 +252,8 @@
         "portfolio": "https://www.maptech.agency"
       },
       "image": null,
-      "workAuthorization": ["H-1B Visa Holder"]
+      "workAuthorization": ["H-1B Visa Holder"],
+      "willingToRelocate": "Yes"
     },
     {
       "id": 105,
@@ -291,7 +297,83 @@
         "portfolio": null
       },
       "image": null,
-      "workAuthorization": ["U.S. Citizen"]
+      "workAuthorization": ["U.S. Citizen"],
+      "willingToRelocate": "Maybe"
+    },
+    {
+      "id": 106,
+      "name": "Saikumar Kamireddy",
+      "title": "Senior Java Engineer",
+      "location": "Brampton, Ontario, Canada",
+      "availability": {
+        "types": ["Full Time", "Contract"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 9,
+      "skills": [
+        "Angular", "TypeScript", "JavaScript", "CSS/SCSS",
+        "Node.js", "Java", "Spring Boot",
+        "AWS", "Azure", "Docker", "Kubernetes", "CI/CD Pipelines",
+        "PostgreSQL", "MySQL", "MongoDB", "Elasticsearch",
+        "REST API Design", "TDD / Unit Testing", "Git / GitHub", 
+        "Agile / Scrum", "System Design", "Microservices Architecture"
+      ],
+      "bio": "9+ years of IT experience in analysis, design and development of client server and Web-based applications using Java, J2EE and XML.",
+      "projects": [],
+      "links": {
+        "github": null,
+        "linkedin": "https://www.linkedin.com/in/saikumar-k-0b2b76123",
+        "resume": "https://docs.google.com/document/d/1HCTCck_YZsvF2lQVbrKuopVJvUi3KPRb/edit?usp=drivesdk",
+        "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["Authorized to work in Canada"],
+      "willingToRelocate": "Yes"
+    },
+    {
+      "id": 107,
+      "name": "Muhammad Syaichul Islam",
+      "title": "Senior Backend Developer",
+      "location": "Surabaya, East Java, Indonesia",
+      "availability": {
+        "types": ["Full Time"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 8,
+      "skills": [
+        "Vue.js",
+        "Node.js", "Python", "Java", "Spring Boot", "Go", "Ruby on Rails", "PHP",
+        "GCP", "Docker",
+        "PostgreSQL", "MySQL", "Redis",
+        "REST API Design", "TDD / Unit Testing", "Git / GitHub", 
+        "Agile / Scrum", "System Design", "Microservices Architecture"
+      ],
+      "bio": "Senior Backend Developer with 8+ years of experience designing and optimizing high-performance applications in banking, finance, insurance, and POS industries. Expertise in Java (Spring Boot, Quarkus), microservices, and cloud-based solutions. Passionate about continuous learning, developing high quality code, and tackling complex challenges with a logical approach.",
+      "projects": [
+        {
+          "name": "Auto2000 Digiroom",
+          "description": "Developed key features including a product synchronization system integrated with third-party platforms, and improved the product promotion system based on business analyst guidance.",
+          "technologies": ["Java", "Springboot framework", "Redis", "Grafana", "PostgreSQL"],
+          "link": "https://auto2000.co.id/"
+        },
+        {
+          "name": "School Payment Apps",
+          "description": "Created APIs for billing and payment features, integrating Midtrans payment gateway for various banking methods.",
+          "technologies": ["Golang", "Fiber framework", "Grafana", "PostgreSQL"],
+          "link": null
+        }
+      ],
+      "links": {
+        "github": "https://github.com/zyaicool",
+        "linkedin": "https://www.linkedin.com/in/muhammad-s-369526125/",
+        "resume": "https://drive.google.com/file/d/1lZJVnOGevOtTsGkK0iGnLFMxDstZ8LZJ/view?usp=sharing",
+        "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["Indonesia Citizen"],
+      "willingToRelocate": "Yes"
     }
   ]
 }

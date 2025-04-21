@@ -43,7 +43,8 @@ export type Engineer = {
     portfolio?: string
   }
   image?: string
-  workAuthorization?: string[] // CHANGED to array
+  workAuthorization?: string[]
+  willingToRelocate?: string
 }
 
 const workAuthStyles: Record<string, { header: string; badge: string }> = {
@@ -78,6 +79,10 @@ const workAuthStyles: Record<string, { header: string; badge: string }> = {
   "Authorized to work in the U.S.": {
     header: "border-t-4 border-gray-300",
     badge: "bg-gray-100 text-gray-800",
+  },
+  "Authorized to work in Canada": {
+    header: "border-t-4 border-cyan-300",
+    badge: "bg-cyan-100 text-cyan-800",
   },
   "Indonesia Citizen": {
     header: "border-t-4 border-amber-300",
@@ -164,6 +169,20 @@ export function EngineerCard({ engineer }: { engineer: Engineer }) {
                 </Badge>
               ))}
             </div>
+            {engineer.willingToRelocate && (
+        <div>
+          <h4 className="text-sm font-medium mt-1 mb-1">Willing to Relocate</h4>
+          <Badge
+            className={clsx("text-xs", {
+              "bg-green-100 text-green-800": engineer.willingToRelocate === "Yes",
+              "bg-yellow-100 text-yellow-800": engineer.willingToRelocate === "Maybe",
+              "bg-red-100 text-red-800": engineer.willingToRelocate === "No",
+            })}
+          >
+            {engineer.willingToRelocate}
+          </Badge>
+          </div>
+        )}
           </div>
         )}
 
