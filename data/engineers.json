@@ -186,6 +186,57 @@
       "willingToRelocate": "Yes"
     },
     {
+      "id": 108,
+      "name": "David Pang",
+      "title": "Senior Computer Science Student",
+      "location": "Whitestone, New York, United States",
+      "availability": {
+        "types": ["Full Time"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 1,
+      "skills": [
+        "React", "Vue.js", "JavaScript", "CSS/SCSS", "UI/UX Design",
+        "Node.js", "Express", "Python", "Django", "Java", "Go", "PHP",
+        "AWS", "Docker", "CI/CD Pipelines",
+        "PostgreSQL", "MySQL", "MongoDB",
+        "REST API Design", "Git / GitHub", "Agile / Scrum", "System Design",
+        "MIPS", "Bash", "Socket.IO", "AJAX", "WebSockets", "PuTTY", "winscp",
+        "XSRF / CSRF Tokens / Security", "Threading / Concurrency", "Serialization"
+      ],
+      "bio": "Hey there! I'm David Pang, a senior Computer Science student at the University at Buffalo, graduating in 2025. I'm interested in systems integration and architecture—designing and implementing scalable, efficient solutions that solve real problems that align with business solutions. I enjoy working across layers to build systems that are maintainable and available. My experience spans multiple languages and developmental tools, and I'm driven by the challenge of engineering software that stays available under scaling pressure, and is reasonably updatable for future individuals. I'm currently looking into cloud computing resources such as AWS and studying for systems and software design.",
+      "projects": [
+        {
+          "name": "Student Meal Delivery Platform",
+          "description": "Built a delivery web application similar to DoorDash, featuring real-time location tracking, payment processing, and dynamic business filtering based on geolocation. Collaborated in an Agile team using Scrum for efficient project delivery.",
+          "technologies": [
+            "PHP", "JavaScript", "HTML", "CSS", "SQL", "Nominatim API",
+            "Google Maps API", "PayPal REST API", "Scrum", "winscp"
+          ],
+          "link": null
+        },
+        {
+          "name": "Lee’s Market",
+          "description": "Developed a full-stack web application for a local business that sells products to consumers and restaurants in bulk, including a responsive UI, secure user authentication, and a containerized backend. Designed RESTful APIs and implemented XSRF protection, with deployment-ready architecture using Docker and nginx.",
+          "technologies": [
+            "React", "React Bootstrap", "Node.js", "Express", "PostgreSQL", "JWT",
+            "Docker", "nginx", "PuTTY"
+          ],
+          "link": null
+        }
+      ],
+      "links": {
+        "github": "https://github.com/dpang1124",
+        "linkedin": "https://www.linkedin.com/in/david-pang-0a5113251/",
+        "resume": "https://docs.google.com/document/d/1PNobFW8ffkgRF9eAO85759ReEFHzsibwF5IDi5qP-s4/edit?usp=sharing",
+        "portfolio": "https://davidpangspersonalwebsite.com"
+      },
+      "image": null,
+      "workAuthorization": ["U.S. Citizen"],
+      "willingToRelocate": "Yes"
+    },    
+    {
       "id": 102,
       "name": "Chaitanya Shrikrishna Joshi",
       "title": "Data & Automation Analyst",
