@@ -113,7 +113,7 @@ const recruiterTestimonials = [
     role: "Staffing Consultant",
     industry: "Tech Consulting",
     image: "/testimonials/bryce.jpg",
-    quote: "Matt's screening process is sharper than most CTOs I've worked with. He doesn't just pass along résumés — he sends people who've already been through fire. When he says 'this one's ready,' I know they are.",
+    quote: "Matt's screening process is sharper than most CTOs I've worked with. He doesn't just pass along resumes — he sends people who've already been through fire. When he says 'this one's ready,' I know they are.",
     initials: "BH"
   },
   {
