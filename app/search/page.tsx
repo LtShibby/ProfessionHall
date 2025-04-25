@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Search, Filter } from "lucide-react"
+import { Search, Filter, Users } from "lucide-react"
 import {
   Sheet,
   SheetContent,
@@ -44,7 +44,7 @@ export default function SearchPage() {
 
   const normalize = (str: string) => str.toLowerCase()
 
-  const handleSearch = async () => {
+  const handleSearch = useCallback(async () => {
     setLoading(true)
     try {
       const q = normalize(searchQuery)
@@ -60,7 +60,7 @@ export default function SearchPage() {
             project.technologies.some(tech => normalize(tech).includes(q))
           )
 
-        const matchesSkills = selectedSkills.every(skill => eng.skills.includes(skill))
+        const matchesSkills = selectedSkills.length === 0 || selectedSkills.every(skill => eng.skills.includes(skill))
         const matchesLocation = !locationFilter || normalize(eng.location).includes(normalize(locationFilter))
         const matchesExperience = !experienceFilter || eng.experience >= Number(experienceFilter)
         const matchesWorkAuth =
@@ -79,7 +79,7 @@ export default function SearchPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [searchQuery, selectedSkills, locationFilter, experienceFilter, workAuthFilter, availabilityFilter, willingToRelocateFilter])
 
   const fetchSuggestions = async (query: string) => {
     if (!query) return setSuggestions([])
@@ -119,7 +119,7 @@ export default function SearchPage() {
 
   useEffect(() => {
     handleSearch()
-  }, [selectedSkills, locationFilter, experienceFilter, workAuthFilter, availabilityFilter, willingToRelocateFilter])
+  }, [handleSearch])
 
   const paginatedResults = results.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
   const totalPages = Math.ceil(results.length / PAGE_SIZE)
@@ -128,7 +128,60 @@ export default function SearchPage() {
     <div className="flex min-h-screen flex-col">
       <NavBar />
       <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Find Talent</h2>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Find Talent</h2>
+            <div className="flex items-center gap-2 mt-1">
+              <Users className="h-4 w-4 text-muted-foreground" />
+              <p className="text-muted-foreground">
+                {engineersData.engineers.length} engineers ready to join your team
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <Input
+              placeholder="Search by name, skills, or location..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="max-w-sm"
+            />
+            <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" className="md:hidden">
+                  <Filter className="mr-2 h-4 w-4" />
+                  Filters
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+                <SheetHeader>
+                  <SheetTitle>Filters</SheetTitle>
+                  <SheetDescription>Refine your search results</SheetDescription>
+                </SheetHeader>
+                <FilterSection
+                  skills={commonSkills}
+                  selectedSkills={selectedSkills}
+                  toggleSkill={toggleSkill}
+                  locationFilter={locationFilter}
+                  setLocationFilter={value => {
+                    setLocationFilter(value)
+                    fetchLocationSuggestions(value)
+                  }}
+                  experienceFilter={experienceFilter}
+                  setExperienceFilter={setExperienceFilter}
+                  workAuthFilter={workAuthFilter}
+                  setWorkAuthFilter={setWorkAuthFilter}
+                  availabilityFilter={availabilityFilter}
+                  setAvailabilityFilter={setAvailabilityFilter}
+                  willingToRelocateFilter={willingToRelocateFilter}
+                  setWillingToRelocateFilter={setWillingToRelocateFilter}
+                  locationSuggestions={locationSuggestions}
+                  fetchLocationSuggestions={fetchLocationSuggestions}
+                  prefix="mobile"
+                />
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
         <div className="flex flex-col md:grid md:grid-cols-[250px_1fr] gap-4">
           <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
             <SheetTrigger asChild>

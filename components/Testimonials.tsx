@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
 import { motion, AnimatePresence } from "framer-motion"
+import { AnimatedPlacementCount } from "./AnimatedPlacementCount"
 
 const candidateTestimonials = [
   {
@@ -126,8 +127,8 @@ const recruiterTestimonials = [
 ]
 
 const SCROLL_SPEED = 0.5 // pixels per frame
-const PLACEMENT_COUNT = 47
-const RECRUITER_COUNT = 19
+const PLACEMENT_COUNT = 17
+const RECRUITER_COUNT = 10
 
 export function Testimonials() {
   const [isPaused, setIsPaused] = useState(false)
@@ -185,21 +186,19 @@ export function Testimonials() {
             </AnimatePresence>
 
             <AnimatePresence mode="wait">
-              <motion.div
-                key={showRecruiters ? "recruiter-count" : "candidate-count"}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className="flex items-center justify-center gap-2 text-2xl font-bold text-primary"
-              >
-                <span>⚡</span>
-                <span>
-                  {showRecruiters
-                    ? `${RECRUITER_COUNT} Recruiters Sourced Talent`
-                    : `${PLACEMENT_COUNT} Candidates Placed`}
-                </span>
-              </motion.div>
+              {showRecruiters ? (
+                <AnimatedPlacementCount 
+                  key="recruiter" 
+                  count={RECRUITER_COUNT} 
+                  label="Recruiters Sourced Talent" 
+                />
+              ) : (
+                <AnimatedPlacementCount 
+                  key="candidates" 
+                  count={PLACEMENT_COUNT} 
+                  label="Candidates Placed" 
+                />
+              )}
             </AnimatePresence>
 
             <AnimatePresence mode="wait">

@@ -19,32 +19,32 @@ export type Project = {
   name: string
   description: string
   technologies: string[]
-  link?: string
+  link?: string | null
 }
 
 export type Engineer = {
-  id: string | number
+  id: number
   name: string
   title: string
   skills: string[]
   experience: number
   location: string
-  availability?: {
+  availability: {
     types: string[]
-    startDate?: string
-    note?: string
+    startDate: string | null
+    note: string | null
   }
   bio: string
   projects: Project[]
-  links?: {
-    github?: string
-    linkedin?: string
-    resume?: string
-    portfolio?: string
+  links: {
+    github?: string | null
+    linkedin?: string | null
+    resume?: string | null
+    portfolio?: string | null
   }
-  image?: string
-  workAuthorization?: string[]
-  willingToRelocate?: string
+  workAuthorization: string[]
+  willingToRelocate: string
+  industry?: string
 }
 
 const workAuthStyles: Record<string, { header: string; badge: string }> = {
@@ -109,7 +109,7 @@ export function EngineerCard({ engineer }: { engineer: Engineer }) {
   const skillLimit = 12
   const visibleSkills = showAllSkills ? engineer.skills : engineer.skills.slice(0, skillLimit)
 
-  const workAuth = engineer.workAuthorization?.[0] || "Other"
+  const workAuth = engineer.workAuthorization[0] || "Other"
   const headerColor = workAuthStyles[workAuth]?.header
 
   const workAuthList = Array.isArray(engineer.workAuthorization)
@@ -133,7 +133,7 @@ export function EngineerCard({ engineer }: { engineer: Engineer }) {
               <div className="text-xs text-muted-foreground">
                 {engineer.location} • {engineer.experience}+ years
               </div>
-              {engineer.availability?.types && (
+              {engineer.availability.types && (
                 <div className="flex flex-wrap gap-1 mt-1">
                   {engineer.availability.types.map((type) => (
                     <Badge

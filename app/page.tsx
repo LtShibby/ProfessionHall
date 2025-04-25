@@ -25,32 +25,22 @@ export default function Home() {
                   <p className="text-base sm:text-lg text-gray-500 md:text-xl dark:text-gray-400">
                     ProfessionHall connects professionals with companies through real projects, portfolios, and work samples.
                   </p>
+                  <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                    <Link href="/apply">
+                      <Button size="lg" className="w-full sm:w-auto">
+                        🧑‍💻 Get Matched with Real Jobs
+                      </Button>
+                    </Link>
+                    <Link href="/search">
+                      <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                        🧑‍💼 Find Vetted Engineers Now
+                      </Button>
+                    </Link>
+                  </div>
+                  <p className="text-sm text-gray-500 mt-2 text-center sm:text-left">
+                    Not sure where to start? Check out how it works below ↓
+                  </p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                  {/* Browse Talent */}
-                <div className="relative inline-block">
-                  <span className="absolute -top-2 -left-2 text-xs bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200 px-2 py-0.5 rounded-full shadow-sm">
-                    Recruiters click here!
-                  </span>
-                  <a href="/search">
-                    <button className="px-6 py-3 text-base font-semibold rounded-md border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-                      Browse Talent
-                    </button>
-                  </a>
-                </div>
-                {/* Join the Talent Pool */}
-                <div className="relative inline-block">
-                  <span className="absolute -top-2 -left-2 text-xs bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200 px-2 py-0.5 rounded-full shadow-sm">
-                    Job Seekers click here!
-                  </span>
-                  <a href="/apply">
-                    <button className="px-6 py-3 text-base font-semibold rounded-md bg-primary text-white hover:bg-primary/90 transition">
-                      Join the Talent Pool
-                    </button>
-                  </a>
-                </div>
-              </div>
-
               </div>
               <div className="mx-auto w-full lg:ml-auto order-1 lg:order-2">
                 <div className="aspect-video rounded-xl border bg-gray-100 dark:bg-gray-800 overflow-hidden">
@@ -67,21 +57,25 @@ export default function Home() {
           </div>
         </section>
 
-        <Testimonials />
-        
         <section className="w-full py-12 md:py-24 bg-gray-100 dark:bg-gray-800">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2 max-w-[800px] mx-auto">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What Is Professionhall?</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What Is ProfessionHall?</h2>
                 <p className="text-gray-500 md:text-lg dark:text-gray-400">
                   Professionhall is WozWize's curated talent bench—a simple, searchable showcase of available engineers ready for contract, C2C, or full-time work.
+                </p>
+                <p className="text-sm text-gray-500 mt-2">
+                  Built by engineers for engineers. Founded by Matt Wozniak.
                 </p>
               </div>
             </div>
             <div className="grid gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3">
               <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
-                <SearchIcon className="h-6 w-6 text-primary" />
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-sm font-medium text-primary">Step 1</span>
+                  <SearchIcon className="h-6 w-6 text-primary" />
+                </div>
                 <div className="space-y-2 text-center">
                   <h3 className="text-xl font-bold">Search by Skill</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -90,7 +84,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
-                <UsersIcon className="h-6 w-6 text-primary" />
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-sm font-medium text-primary">Step 2</span>
+                  <UsersIcon className="h-6 w-6 text-primary" />
+                </div>
                 <div className="space-y-2 text-center">
                   <h3 className="text-xl font-bold">Browse the Bench</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -99,7 +96,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex flex-col items-center space-y-2 p-6 bg-white shadow-sm rounded-lg dark:bg-gray-950">
-                <MailIcon className="h-6 w-6 text-primary" />
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-sm font-medium text-primary">Step 3</span>
+                  <MailIcon className="h-6 w-6 text-primary" />
+                </div>
                 <div className="space-y-2 text-center">
                   <h3 className="text-xl font-bold">Contact to Hire</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -111,6 +111,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Testimonials />
       </main>
     </div>
   )
