@@ -2,7 +2,7 @@
   "engineers": [
     {
       "id": 108,
-      "name": "Ross Tomsic",
+      "name": "Ross T.",
       "title": "Lord of DevOps and Almighty Pineapple God",
       "skills": [
           "React", "Next.js", "TypeScript", "JavaScript", "Node.js", "Python", "Django",
@@ -46,7 +46,7 @@
   },
   {
       "id": 106,
-      "name": "Jean DeZonia",
+      "name": "Jean D.",
       "title": "Backend Engineer",
       "location": "San Antonio, Texas, United States",
       "availability": {
@@ -101,7 +101,7 @@
     },
     {
       "id": 100,
-      "name": "Sai Bharath Padigala",
+      "name": "Sai Bharath P.",
       "title": "AI/ML Engineer",
       "location": "New York, New York",
       "availability": {
@@ -144,7 +144,7 @@
     },
     {
       "id": 101,
-      "name": "Smit Uplenchwar",
+      "name": "Smit U.",
       "title": "Software Engineer",
       "location": "Buffalo, New York, United States",
       "availability": {
@@ -187,7 +187,7 @@
     },
     {
       "id": 108,
-      "name": "David Pang",
+      "name": "David P.",
       "title": "Senior Computer Science Student",
       "location": "Whitestone, New York, United States",
       "availability": {
@@ -238,7 +238,7 @@
     },    
     {
       "id": 102,
-      "name": "Chaitanya Shrikrishna Joshi",
+      "name": "Chaitanya J.",
       "title": "Data & Automation Analyst",
       "location": "Buffalo, New York, Erie",
       "availability": {
@@ -281,7 +281,7 @@
     },
     {
       "id": 103,
-      "name": "Fraza Aditya Wiguna",
+      "name": "Fraza W.",
       "title": "Frontend Web Developer",
       "location": "Central Jakarta, DKI Jakarta, Indonesia",
       "availability": {
@@ -322,7 +322,7 @@
     },
     {
       "id": 104,
-      "name": "Man Bahadur Roka",
+      "name": "Bahadur R.",
       "title": "IT Business Consultant",
       "location": "Kathmandu, Bagmati, Nepal",
       "availability": {
@@ -352,7 +352,7 @@
     },
     {
       "id": 105,
-      "name": "Eric Head",
+      "name": "Eric H.",
       "title": "Game Designer / Digital Artist",
       "location": "Buffalo, New York, USA",
       "availability": {
@@ -397,7 +397,7 @@
     },
     {
       "id": 106,
-      "name": "Saikumar Kamireddy",
+      "name": "Saikumar K.",
       "title": "Senior Java Engineer",
       "location": "Brampton, Ontario, Canada",
       "availability": {
@@ -428,7 +428,7 @@
     },
     {
       "id": 107,
-      "name": "Muhammad Syaichul Islam",
+      "name": "Muhammad Syaichul I.",
       "title": "Senior Backend Developer",
       "location": "Surabaya, East Java, Indonesia",
       "availability": {

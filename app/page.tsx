@@ -4,6 +4,7 @@ import { SearchIcon, UsersIcon, MailIcon } from "lucide-react"
 import { NavBar } from "@/components/navbar"
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Testimonials } from '@/components/Testimonials';
 
 export default function Home() {
   return (
@@ -25,6 +26,31 @@ export default function Home() {
                     ProfessionHall connects professionals with companies through real projects, portfolios, and work samples.
                   </p>
                 </div>
+                <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                  {/* Browse Talent */}
+                <div className="relative inline-block">
+                  <span className="absolute -top-2 -left-2 text-xs bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200 px-2 py-0.5 rounded-full shadow-sm">
+                    Recruiters click here!
+                  </span>
+                  <a href="/search">
+                    <button className="px-6 py-3 text-base font-semibold rounded-md border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                      Browse Talent
+                    </button>
+                  </a>
+                </div>
+                {/* Join the Talent Pool */}
+                <div className="relative inline-block">
+                  <span className="absolute -top-2 -left-2 text-xs bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200 px-2 py-0.5 rounded-full shadow-sm">
+                    Job Seekers click here!
+                  </span>
+                  <a href="/apply">
+                    <button className="px-6 py-3 text-base font-semibold rounded-md bg-primary text-white hover:bg-primary/90 transition">
+                      Join the Talent Pool
+                    </button>
+                  </a>
+                </div>
+              </div>
+
               </div>
               <div className="mx-auto w-full lg:ml-auto order-1 lg:order-2">
                 <div className="aspect-video rounded-xl border bg-gray-100 dark:bg-gray-800 overflow-hidden">
@@ -40,6 +66,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Testimonials />
+        
         <section className="w-full py-12 md:py-24 bg-gray-100 dark:bg-gray-800">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
