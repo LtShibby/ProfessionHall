@@ -85,11 +85,19 @@ const candidateTestimonials = [
 
 const recruiterTestimonials = [
   {
+    name: "Sandra K.",
+    role: "Tech Recruiting Lead",
+    industry: "Startup Recruitment",
+    image: "/testimonials/sandra.jpg",
+    quote: "I initially reached out to Matt about a role and he pitched this website to me instead. I thought it was some kind of bait and switch but I ended up finding a candidate perfect for the role. Matt set up the intro, the guy nailed the interview, and the hiring manager didn't even want to see anyone else.",
+    initials: "SK"
+  },
+  {
     name: "Rachel P.",
     role: "Technical Recruiter",
     industry: "Staffing & Recruiting",
     image: "/testimonials/rachel.jpg",
-    quote: "Matt isn't just vetting candidates — he's leveling them up. Every engineer he screens walks away better prepared, and every hire he endorses has been rock solid. I trust his judgment more than most hiring panels.",
+    quote: "Matt isn't just vetting candidates, he's leveling them up. Every engineer he screens walks away better prepared, and every hire he endorses has been rock solid. I trust his judgment more than most hiring panels.",
     initials: "RP"
   },
   {
@@ -97,23 +105,15 @@ const recruiterTestimonials = [
     role: "Senior Talent Partner",
     industry: "Enterprise IT Staffing",
     image: "/testimonials/darnell.jpg",
-    quote: "Working with Matt through ProfessionHall has been a recruiter's dream. He asks the right questions, gives unfiltered feedback, and doesn't waste time. The candidates he greenlights move fast — and stay hired.",
+    quote: "Working with Matt through ProfessionHall has been a recruiter's dream. He asks the right questions, gives unfiltered feedback, and doesn't waste time. The candidates he greenlights move fast and stay hired.",
     initials: "DS"
-  },
-  {
-    name: "Sandra K.",
-    role: "Tech Recruiting Lead",
-    industry: "Startup Recruitment",
-    image: "/testimonials/sandra.jpg",
-    quote: "I initially reached out to Matt about a role and he pitched this website to me instead. I thought it was some kind of bait and switch — but I ended up finding a candidate perfect for the role. Matt set up the intro, the guy nailed the interview, and the hiring manager didn't even want to see anyone else.",
-    initials: "SK"
   },
   {
     name: "Bryce H.",
     role: "Staffing Consultant",
     industry: "Tech Consulting",
     image: "/testimonials/bryce.jpg",
-    quote: "Matt's screening process is sharper than most CTOs I've worked with. He doesn't just pass along resumes — he sends people who've already been through fire. When he says 'this one's ready,' I know they are.",
+    quote: "Matt's screening process is sharper than most CTOs I've worked with. He doesn't just pass along resumes, he sends people who've already been through fire. When he says 'this one's ready,' I know they are.",
     initials: "BH"
   },
   {
@@ -121,7 +121,7 @@ const recruiterTestimonials = [
     role: "Recruiting Manager",
     industry: "Corporate Talent Acquisition",
     image: "/testimonials/imani.jpg",
-    quote: "The thing about working with Matt is — he doesn't just understand engineers, he is one. That makes all the difference. The quality of candidates coming out of ProfessionHall has saved us time, budget, and frankly, a lot of post-hire regret.",
+    quote: "The thing about working with Matt is he doesn't just understand engineers, he is one. That makes all the difference. The quality of candidates coming out of ProfessionHall has saved us time, budget, and frankly, a lot of post-hire regret.",
     initials: "IJ"
   }
 ]
