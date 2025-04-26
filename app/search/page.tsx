@@ -21,6 +21,19 @@ import engineersData from "@/data/engineers.json"
 
 const PAGE_SIZE = 6
 
+// Optimized Fisher-Yates shuffle algorithm
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array]
+  const len = shuffled.length
+  for (let i = len - 1; i > 0; i--) {
+    const j = (Math.random() * (i + 1)) | 0
+    const temp = shuffled[i]
+    shuffled[i] = shuffled[j]
+    shuffled[j] = temp
+  }
+  return shuffled
+}
+
 export default function SearchPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [results, setResults] = useState<Engineer[]>([])
@@ -35,6 +48,16 @@ export default function SearchPage() {
   const [suggestions, setSuggestions] = useState<string[]>([])
   const [locationSuggestions, setLocationSuggestions] = useState<string[]>([])
   const [willingToRelocateFilter, setWillingToRelocateFilter] = useState("any")
+  const [shuffledEngineers, setShuffledEngineers] = useState<Engineer[]>([])
+
+  // Optimized shuffle on component mount
+  useEffect(() => {
+    const startTime = performance.now()
+    const shuffled = shuffleArray(engineersData.engineers)
+    setShuffledEngineers(shuffled)
+    const endTime = performance.now()
+    console.log(`Shuffle completed in ${endTime - startTime}ms`)
+  }, [])
 
   const commonSkills = [
     "React", "Node.js", "Python", "TypeScript", "JavaScript", "AWS", "Java",
@@ -48,7 +71,7 @@ export default function SearchPage() {
     setLoading(true)
     try {
       const q = normalize(searchQuery)
-      const filtered = engineersData.engineers.filter((eng) => {
+      const filtered = shuffledEngineers.filter((eng) => {
         const matchesQuery = !q ||
           normalize(eng.name).includes(q) ||
           normalize(eng.title).includes(q) ||
@@ -79,14 +102,14 @@ export default function SearchPage() {
     } finally {
       setLoading(false)
     }
-  }, [searchQuery, selectedSkills, locationFilter, experienceFilter, workAuthFilter, availabilityFilter, willingToRelocateFilter])
+  }, [searchQuery, selectedSkills, locationFilter, experienceFilter, workAuthFilter, availabilityFilter, willingToRelocateFilter, shuffledEngineers])
 
   const fetchSuggestions = async (query: string) => {
     if (!query) return setSuggestions([])
     const q = normalize(query)
     const keywords = new Set<string>()
 
-    for (const eng of engineersData.engineers) {
+    for (const eng of shuffledEngineers) {
       if (normalize(eng.name).includes(q)) keywords.add(eng.name)
       if (normalize(eng.title).includes(q)) keywords.add(eng.title)
       if (normalize(eng.bio).includes(q)) keywords.add(eng.bio)
@@ -104,7 +127,7 @@ export default function SearchPage() {
   const fetchLocationSuggestions = (input: string) => {
     const q = normalize(input)
     const matches = Array.from(new Set(
-      engineersData.engineers
+      shuffledEngineers
         .map(e => e.location)
         .filter(loc => normalize(loc).includes(q))
     ))

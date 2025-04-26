@@ -222,9 +222,9 @@ export function FilterSection({
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="any">Any</SelectItem>
-            <SelectItem value="Full-time">Full-time</SelectItem>
+            <SelectItem value="Full Time">Full Time</SelectItem>
             <SelectItem value="Contract">Contract</SelectItem>
-            <SelectItem value="Part-time">Part-time</SelectItem>
+            <SelectItem value="Part Time">Part Time</SelectItem>
           </SelectContent>
         </Select>
       </div>

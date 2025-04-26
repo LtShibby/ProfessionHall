@@ -427,6 +427,47 @@
       "willingToRelocate": "Yes"
     },
     {
+      "id": 108,
+      "name": "Chandan Parameshwarappa",
+      "title": "Full Stack Java Developer",
+      "location": "Denver, Colorado, United States",
+      "availability": {
+        "types": ["Full Time", "Contract"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 5,
+      "skills": [
+        "React", "JavaScript", "CSS/SCSS", "Tailwind CSS",
+        "Node.js", "Express", "Java", "Spring Boot",
+        "AWS", "GCP", "Docker", "CI/CD Pipelines",
+        "PostgreSQL", "MySQL", "MongoDB", "Redis",
+        "REST API Design", "TDD / Unit Testing", "Git / GitHub",
+        "Agile / Scrum", "System Design", "Microservices Architecture"
+      ],
+      "bio": "Full Stack Java Developer with strong expertise in Java, Spring Boot, React, and cloud technologies (AWS, GCP, OpenShift). Skilled in building scalable microservices, optimizing system performance, and implementing observability solutions. Experienced with Datadog, OpenTelemetry, and AI-powered applications using OpenAI APIs. Proven success improving system reliability, enhancing code quality, and leading backend/frontend integration efforts. Recent graduate from M.S. in Computer Information Systems at Colorado State University.",
+      "projects": [
+        {
+          "name": "AI-Fitness Recommendation App",
+          "description": "Built a scalable full-stack fitness tracking application using Spring Boot 3, Spring Cloud, and React, leveraging RabbitMQ for asynchronous communication. Integrated OpenAI’s Embedding API to generate personalized fitness recommendations based on user activity data, enhancing user engagement. Implemented secure authentication with Keycloak and designed responsive front-end interfaces.",
+          "technologies": [
+            "Spring Boot 3", "Spring Cloud", "React", "RabbitMQ",
+            "OpenAI API", "Keycloak", "Microservices", "Full-Stack Development"
+          ],
+          "link": null
+        }
+      ],
+      "links": {
+        "github": "https://github.com/chandanshyam",
+        "linkedin": "https://www.linkedin.com/in/chandan-p/",
+        "resume": "https://drive.google.com/file/d/1UY-5B97ZQf7mzJbuKLgse1mOAj9zjKu5/view?usp=sharing",
+        "portfolio": "https://cparam.me/"
+      },
+      "image": null,
+      "workAuthorization": ["F-1 OPT / CPT", "Authorized to work in the U.S."],
+      "willingToRelocate": "Yes"
+    },
+    {
       "id": 107,
       "name": "Muhammad Syaichul I.",
       "title": "Senior Backend Developer",
