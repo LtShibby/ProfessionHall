@@ -510,6 +510,52 @@
       "image": null,
       "workAuthorization": ["Indonesia Citizen"],
       "willingToRelocate": "Yes"
-    }
+    },
+    {
+      "id": 109,
+      "name": "Husnain Jaleel",
+      "title": "Product Designer",
+      "location": "Islamabad, Punjab, Pakistan",
+      "availability": {
+        "types": ["Full Time", "Part Time", "Contract"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 3,
+      "skills": [
+        "UI/UX Design",
+        "System Design",
+        "Product Design",
+        "Digital Experiences",
+        "Conversion Optimization",
+        "User Research",
+        "Prototyping",
+        "Wireframing"
+      ],
+      "bio": "A Product Designer specializing in creating impactful digital experiences that drive results. I’ve worked with startups, creators, and established brands, including Metric, a fintech platform trusted by 180k users in 190+ countries. Together, we’ll craft designs that aren’t just stunning but functional, user-focused, and conversion-driven.",
+      "projects": [
+        {
+          "name": "Metric App",
+          "description": "Contributed to Metric, a fintech platform trusted by 180k users across 190+ countries. Designed user-focused, conversion-driven experiences to enhance engagement and customer satisfaction.",
+          "technologies": [
+            "UI/UX Design",
+            "Product Design",
+            "Figma",
+            "User Research",
+            "Fintech Design"
+          ],
+          "link": "https://metricapp.co/"
+        }
+      ],
+      "links": {
+        "github": null,
+        "linkedin": "https://www.linkedin.com/in/husnain-jaleel/",
+        "resume": "https://drive.google.com/drive/folders/1ndoXfhD06SLJEnXFRAFBZCSWgfSp7vMv?usp=drive_link",
+        "portfolio": "https://dribbble.com/husnainjaleel"
+      },
+      "image": null,
+      "workAuthorization": ["Authorized to work in Singapore", "Authorized to work in the U.S."],
+      "willingToRelocate": "Yes"
+    }    
   ]
 }
