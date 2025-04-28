@@ -556,6 +556,92 @@
       "image": null,
       "workAuthorization": ["Authorized to work in Singapore", "Authorized to work in the U.S."],
       "willingToRelocate": "Yes"
-    }    
+    },
+    {
+      "id": 110,
+      "name": "Ahamed M.",
+      "title": "SQL/PLSQL Developer",
+      "location": "Cuddalore, Tamil Nadu, India",
+      "availability": {
+        "types": ["Full Time"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 5,
+      "skills": [
+        "Python",
+        "MySQL",
+        "SQL",
+        "PLSQL"
+      ],
+      "bio": "I have good experience in SQL and PLSQL and I would like to upgrade myself in my profession.",
+      "projects": [
+        {
+          "name": "Bajaj Insurance (NEMIS)",
+          "description": "NEMIS (National Encounter Management Information System) is a healthcare insurance application that handles end-to-end encounter processing including creation, validation, correction, payment tracking, and reconciliation. It processes claims from multiple systems and includes seven core modules such as Load, Crosswalk, Adjustment, Validation, Extraction, Generation, and Response Load.",
+          "technologies": [
+            "SQL",
+            "PLSQL",
+            "Healthcare Insurance Systems"
+          ],
+          "link": null
+        }
+      ],
+      "links": {
+        "github": null,
+        "linkedin": null,
+        "resume": null,
+        "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["TN Visa"],
+      "willingToRelocate": "Yes"
+    },
+    {
+      "id": 111,
+      "name": "Sailesh G.",
+      "title": "Frontend-Focused Software Engineer",
+      "location": "Los Angeles, California, USA",
+      "availability": {
+        "types": ["Full Time", "Contract"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 8,
+      "skills": [
+        "React",
+        "Angular",
+        "TypeScript",
+        "JavaScript",
+        "CSS/SCSS",
+        "Tailwind CSS",
+        "UI/UX Design",
+        "Node.js",
+        "Express",
+        "Flask",
+        "Java",
+        "AWS",
+        "GCP",
+        "Docker",
+        "MySQL",
+        "GraphQL",
+        "REST API Design",
+        "Git / GitHub",
+        "Agile / Scrum",
+        "System Design",
+        "Mobile App Development (Ionic, React Native, Android)"
+      ],
+      "bio": "I'm a Frontend-focused Software Engineer with 8+ years of experience building scalable web and mobile applications using React, React Native, Angular, and full-stack technologies like Java, Scala, and AWS. I've led UI development for dynamic, API-driven platforms, optimized performance across browsers and devices, and collaborated closely with cross-functional teams. I'm passionate about creating intuitive user experiences and continuously growing with modern tech.",
+      "projects": [],
+      "links": {
+        "github": null,
+        "linkedin": "https://www.linkedin.com/in/sailesh-guedul/",
+        "resume": "https://drive.google.com/file/d/1PMBcAC_OFpi2nxUumc79y_l5YBVmNZVm/view?usp=sharing",
+        "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["U.S. Green Card Holder (Permanent Resident)"],
+      "willingToRelocate": "Yes"
+    }         
   ]
 }
