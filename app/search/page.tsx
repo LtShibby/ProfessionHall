@@ -161,43 +161,6 @@ export default function SearchPage() {
               </p>
             </div>
           </div>
-          <div className="flex gap-2">
-            <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
-              <SheetTrigger asChild>
-                <Button variant="outline" className="md:hidden">
-                  <Filter className="mr-2 h-4 w-4" />
-                  Filters
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                <SheetHeader>
-                  <SheetTitle>Filters</SheetTitle>
-                  <SheetDescription>Refine your search results</SheetDescription>
-                </SheetHeader>
-                <FilterSection
-                  skills={commonSkills}
-                  selectedSkills={selectedSkills}
-                  toggleSkill={toggleSkill}
-                  locationFilter={locationFilter}
-                  setLocationFilter={value => {
-                    setLocationFilter(value)
-                    fetchLocationSuggestions(value)
-                  }}
-                  experienceFilter={experienceFilter}
-                  setExperienceFilter={setExperienceFilter}
-                  workAuthFilter={workAuthFilter}
-                  setWorkAuthFilter={setWorkAuthFilter}
-                  availabilityFilter={availabilityFilter}
-                  setAvailabilityFilter={setAvailabilityFilter}
-                  willingToRelocateFilter={willingToRelocateFilter}
-                  setWillingToRelocateFilter={setWillingToRelocateFilter}
-                  locationSuggestions={locationSuggestions}
-                  fetchLocationSuggestions={fetchLocationSuggestions}
-                  prefix="mobile"
-                />
-              </SheetContent>
-            </Sheet>
-          </div>
         </div>
         <div className="flex flex-col md:grid md:grid-cols-[250px_1fr] gap-4">
           <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
