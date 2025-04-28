@@ -162,12 +162,6 @@ export default function SearchPage() {
             </div>
           </div>
           <div className="flex gap-2">
-            <Input
-              placeholder="Search by name, skills, or location..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="max-w-sm"
-            />
             <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
               <SheetTrigger asChild>
                 <Button variant="outline" className="md:hidden">
