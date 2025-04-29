@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Menu, SearchIcon } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 
 export function NavBar() {
@@ -16,6 +16,9 @@ export function NavBar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6">
+          <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+            Home
+          </Link>
           <Link href="/apply" className="text-sm font-medium hover:text-primary transition-colors">
             Join the Talent Pool
           </Link>
@@ -33,7 +36,12 @@ export function NavBar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-64">
+              <SheetTitle>Navigation Menu</SheetTitle>
+              <SheetDescription>Access ProfessionHall's main navigation links</SheetDescription>
               <div className="flex flex-col gap-4 mt-8">
+              <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+                  Home
+                </Link>
                 <Link href="/apply" className="text-base font-medium hover:text-primary transition-colors">
                   Join the Talent Pool
                 </Link>

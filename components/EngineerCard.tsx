@@ -77,8 +77,8 @@ const workAuthStyles: Record<string, { header: string; badge: string }> = {
     badge: "bg-pink-100 text-pink-800",
   },
   "Authorized to work in the U.S.": {
-    header: "border-t-4 border-gray-300",
-    badge: "bg-gray-100 text-gray-800",
+    header: "border-t-4 border-green-300",
+    badge: "bg-green-100 text-green-800",
   },
   "Authorized to work in Canada": {
     header: "border-t-4 border-cyan-300",

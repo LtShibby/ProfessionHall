@@ -45,7 +45,7 @@
       "willingToRelocate": "No"
   },
   {
-      "id": 106,
+      "id":2106,
       "name": "Jean D.",
       "title": "Backend Engineer",
       "location": "San Antonio, Texas, United States",
@@ -186,7 +186,7 @@
       "willingToRelocate": "Yes"
     },
     {
-      "id": 108,
+      "id": 2108,
       "name": "David P.",
       "title": "Senior Computer Science Student",
       "location": "Whitestone, New York, United States",
@@ -642,6 +642,115 @@
       "image": null,
       "workAuthorization": ["U.S. Green Card Holder (Permanent Resident)"],
       "willingToRelocate": "Yes"
-    }         
+    },
+    {
+      "id": 201,
+      "name": "Jaswanth G.",
+      "title": "Full-Stack Developer & Cloud Engineer",
+      "location": "Buffalo, New York, United States",
+      "availability": {
+        "types": ["Full Time"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 1,
+      "skills": [
+        "Next.js", "JavaScript", "CSS/SCSS", "Python", "Django", "Flask", "Java", "Spring Boot",
+        "AWS", "Azure", "Docker", "Kubernetes", "CI/CD Pipelines",
+        "PostgreSQL", "MySQL", "MongoDB", "Elasticsearch", "GraphQL",
+        "Pandas", "PyTorch", "TensorFlow", "Spark",
+        "TDD / Unit Testing", "Git / GitHub", "Agile / Scrum", "Microservices Architecture",
+        "Computer Vision", "Jenkins", "Linux", "ARP spoofing", "networking"
+      ],
+      "bio": "I'm Jaswanth G., a passionate Computer Science graduate student with strong experience in full-stack development, cloud infrastructure, and computer vision.",
+      "projects": [
+        {
+          "name": "MRI Brain Tumor 2D-to-3D Reconstruction and Growth Prediction",
+          "description": "Reconstructed 2D MRI scans into interactive 3D tumor models and predicted tumor growth using ML pipelines.",
+          "technologies": ["Python", "OpenCV", "TensorFlow", "Machine Learning", "3D Visualization"],
+          "link": null
+        },
+        {
+          "name": "Full-Stack Fitness Application",
+          "description": "Web app with workout logging, progress visualization, goal-setting, and AWS-hosted UI.",
+          "technologies": ["Django", "React", "PostgreSQL", "AWS EC2", "Docker", "REST APIs", "JavaScript"],
+          "link": "https://github.com/jdonepud/SpeedPulse"
+        }
+      ],
+      "links": {
+        "github": null,
+        "linkedin": "https://www.linkedin.com/in/jaswanthgopi/",
+        "resume": "https://drive.google.com/file/d/1jyc02pv5jtZuf6k8nwonV6WnGVA0QjAz/view?usp=sharing",
+        "portfolio": "https://www.acsu.buffalo.edu/~jdonepud/"
+      },
+      "image": null,
+      "workAuthorization": ["F-1 OPT / CPT", "Authorized to work in the U.S."],
+      "willingToRelocate": "Yes"
+    },
+    {
+      "id": 202,
+      "name": "Dylan B.",
+      "title": "Mechanical Engineering Student",
+      "location": "Baldwin, New York, United States",
+      "availability": {
+        "types": ["Full Time"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 0,
+      "skills": [
+        "Solidworks", "autoCAD", "CNCMotion", "NI ultisim",
+        "Python", "MATLab", "Arduino"
+      ],
+      "bio": "Student engineer with hands-on project experience in design, prototyping, and embedded systems.",
+      "projects": [],
+      "links": {
+        "github": null,
+        "linkedin": "https://www.linkedin.com/in/dylanbharrat/",
+        "resume": "https://drive.google.com/file/d/1Ih2spbc-u-q-xixQQ7ArTGsQwDA5xwPO/view?usp=drive_link",
+        "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["U.S. Citizen"],
+      "willingToRelocate": "Maybe"
+    },
+    {
+      "id": 203,
+      "name": "Rishikesh C.",
+      "title": "Software Engineer",
+      "location": "Boston, MA, USA",
+      "availability": {
+        "types": ["Full Time"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 2,
+      "skills": [
+        "React", "TypeScript", "Node.js", "Python", "Scala",
+        "AWS", "GCP", "Docker", "Kubernetes", "CI/CD Pipelines",
+        "PostgreSQL", "Redis", "Elasticsearch", "GraphQL",
+        "Pandas", "Airflow", "Spark",
+        "REST API Design", "Git / GitHub", "Agile / Scrum",
+        "System Design", "Microservices Architecture", "Functional Programming"
+      ],
+      "bio": "Software Engineer with strong experience in Data Engineering and Functional Programming.",
+      "projects": [
+        {
+          "name": "Scetls",
+          "description": "A data orchestration tool built in Scala.",
+          "technologies": ["Scala", "Software Engineering", "Data Engineering"],
+          "link": null
+        }
+      ],
+      "links": {
+        "github": "https://github.com/kumarc-rishikesh",
+        "linkedin": "https://www.linkedin.com/in/kumarcrishikesh/",
+        "resume": "https://drive.google.com/file/d/1WnHkY7OTvDwBZ2TEjBLZbwzwaNYNhF4k/view?usp=sharing",
+        "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["F-1 OPT / CPT"],
+      "willingToRelocate": "Yes"
+    }
   ]
 }

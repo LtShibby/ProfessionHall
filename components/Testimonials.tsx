@@ -13,7 +13,7 @@ const candidateTestimonials = [
     name: "Marcus B.",
     role: "Cloud Infrastructure Engineer",
     industry: "Enterprise SaaS",
-    image: "/testimonials/marcus.jpg",
+    image: null,
     quote: "ProfessionHall connected me with a great opportunity where I'm now architecting multi-region AWS environments and scaling infrastructure for enterprise clients.",
     initials: "MB"
   },
@@ -21,7 +21,7 @@ const candidateTestimonials = [
     name: "Alina C.",
     role: "Full Stack Developer",
     industry: "E-commerce",
-    image: "/testimonials/alina.jpg",
+    image: null,
     quote: "Using ProfessionHall made all the difference. Instead of just another resume drop, they highlighted my real project work and that's what got me hired.",
     initials: "AC"
   },
@@ -29,7 +29,7 @@ const candidateTestimonials = [
     name: "Devin P.",
     role: "Machine Learning Engineer",
     industry: "HealthTech",
-    image: "/testimonials/dev.jpg",
+    image: null,
     quote: "ProfessionHall's project-first approach gave me a real advantage. It let me show what I could actually build, not just what I could memorize for an interview.",
     initials: "DP"
   },
@@ -37,7 +37,7 @@ const candidateTestimonials = [
     name: "Lena W.",
     role: "Front-End Engineer",
     industry: "EdTech",
-    image: "/testimonials/lena.jpg",
+    image: null,
     quote: "ProfessionHall didn't just get me a job it got me seen. My portfolio finally stood out, and the company that hired me said it was the real projects that made the decision easy.",
     initials: "LW"
   },
@@ -45,7 +45,7 @@ const candidateTestimonials = [
     name: "Carlos M.",
     role: "DevOps Engineer",
     industry: "FinTech",
-    image: "/testimonials/carlos.jpg",
+    image: null,
     quote: "After months of rejection, ProfessionHall was a turning point. Within two weeks, I had interviews lined up. Now I'm leading CI/CD rollout at a fintech startup.",
     initials: "CM"
   },
@@ -53,7 +53,7 @@ const candidateTestimonials = [
     name: "Neha K.",
     role: "Data Scientist",
     industry: "Retail Analytics",
-    image: "/testimonials/neha.jpg",
+    image: null,
     quote: "I'd never seen a platform so focused on actual work. ProfessionHall helped me tell a better story and that story landed me my current role.",
     initials: "NK"
   },
@@ -61,7 +61,7 @@ const candidateTestimonials = [
     name: "Aaron T.",
     role: "Software Engineer",
     industry: "Cybersecurity",
-    image: "/testimonials/aaron.jpg",
+    image: null,
     quote: "Matt's interview was no joke. I walked out thinking I blew it. But he gave honest feedback, and a week later I got an offer from the company I didn't think would even look at me. Game-changing experience.",
     initials: "AT"
   },
@@ -69,7 +69,7 @@ const candidateTestimonials = [
     name: "Jasmine L.",
     role: "AI Product Engineer",
     industry: "Artificial Intelligence",
-    image: "/testimonials/jasmine.jpg",
+    image: null,
     quote: "The interview with Matt was tough but in the best way. He pushed me to think, challenged my assumptions, and made me a better engineer. That session alone was worth more than three bootcamps.",
     initials: "JL"
   },
@@ -77,7 +77,7 @@ const candidateTestimonials = [
     name: "Tanya V.",
     role: "Backend Developer",
     industry: "Financial Services",
-    image: "/testimonials/tanya.jpg",
+    image: null,
     quote: "I almost didn't apply because I thought I wasn't ready. Matt's message was blunt but supportive 'Show your work. Let them judge you for that.' I did. It worked.",
     initials: "TV"
   }
@@ -88,7 +88,7 @@ const recruiterTestimonials = [
     name: "Sandra K.",
     role: "Tech Recruiting Lead",
     industry: "Startup Recruitment",
-    image: "/testimonials/sandra.jpg",
+    image: null,
     quote: "I initially reached out to Matt about a role and he pitched this website to me instead. I thought it was some kind of bait and switch but I ended up finding a candidate perfect for the role. Matt set up the intro, the guy nailed the interview, and the hiring manager didn't even want to see anyone else.",
     initials: "SK"
   },
@@ -96,7 +96,7 @@ const recruiterTestimonials = [
     name: "Rachel P.",
     role: "Technical Recruiter",
     industry: "Staffing & Recruiting",
-    image: "/testimonials/rachel.jpg",
+    image: null,
     quote: "Matt isn't just vetting candidates, he's leveling them up. Every engineer he screens walks away better prepared, and every hire he endorses has been rock solid. I trust his judgment more than most hiring panels.",
     initials: "RP"
   },
@@ -104,7 +104,7 @@ const recruiterTestimonials = [
     name: "Darnell S.",
     role: "Senior Talent Partner",
     industry: "Enterprise IT Staffing",
-    image: "/testimonials/darnell.jpg",
+    image: null,
     quote: "Working with Matt through ProfessionHall has been a recruiter's dream. He asks the right questions, gives unfiltered feedback, and doesn't waste time. The candidates he greenlights move fast and stay hired.",
     initials: "DS"
   },
@@ -112,7 +112,7 @@ const recruiterTestimonials = [
     name: "Bryce H.",
     role: "Staffing Consultant",
     industry: "Tech Consulting",
-    image: "/testimonials/bryce.jpg",
+    image: null,
     quote: "Matt's screening process is sharper than most CTOs I've worked with. He doesn't just pass along resumes, he sends people who've already been through fire. When he says 'this one's ready,' I know they are.",
     initials: "BH"
   },
@@ -120,7 +120,7 @@ const recruiterTestimonials = [
     name: "Imani J.",
     role: "Recruiting Manager",
     industry: "Corporate Talent Acquisition",
-    image: "/testimonials/imani.jpg",
+    image: null,
     quote: "The thing about working with Matt is he doesn't just understand engineers, he is one. That makes all the difference. The quality of candidates coming out of ProfessionHall has saved us time, budget, and frankly, a lot of post-hire regret.",
     initials: "IJ"
   }

@@ -52,11 +52,8 @@ export default function SearchPage() {
 
   // Optimized shuffle on component mount
   useEffect(() => {
-    const startTime = performance.now()
     const shuffled = shuffleArray(engineersData.engineers)
     setShuffledEngineers(shuffled)
-    const endTime = performance.now()
-    console.log(`Shuffle completed in ${endTime - startTime}ms`)
   }, [])
 
   const commonSkills = [
