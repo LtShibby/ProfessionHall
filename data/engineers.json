@@ -756,6 +756,94 @@
       "image": null,
       "workAuthorization": ["F-1 OPT / CPT"],
       "willingToRelocate": "Yes"
+    },
+    {
+      "id": 301,
+      "name": "Nick P.",
+      "title": "Software Engineer",
+      "location": "Vancouver, BC, Canada",
+      "availability": {
+        "types": ["Full Time"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 3,
+      "skills": [
+        "React", "TypeScript", "JavaScript", "CSS/SCSS", "Tailwind CSS",
+        "Node.js", "Express", "Python",
+        "AWS", "Docker", "Terraform",
+        "PostgreSQL", "MongoDB", "Redis",
+        "REST API Design", "TDD / Unit Testing", "Git / GitHub",
+        "Agile / Scrum", "System Design", "Microservices Architecture",
+        "Kafka", "Debezium"
+      ],
+      "bio": "Software engineer with 3 years experience building fullstack web applications using JavaScript/TypeScript, React, Python and Ruby. Primarily backend-focused but comfortable on the frontend as well. Experience building CDC pipelines using Kafka and Debezium, and streaming data changes to microservices with Server-Sent-Events. Passionate about collaboration and solving complex engineering problems.",
+      "projects": [
+        {
+          "name": "Tumbleweed",
+          "description": "Open-source framework for creating Change Data Capture (CDC) pipelines between a source PostgreSQL database and microservice consumers. Enables real-time data streaming to microservice consumers using Server-Sent-Events (SSE).",
+          "technologies": ["TypeScript", "React", "Node.js", "Express", "KafkaJS", "Kafka", "Debezium"],
+          "link": "https://tumbleweed-cdc.github.io/"
+        }
+      ],
+      "links": {
+        "github": null,
+        "linkedin": null,
+        "resume": null,
+        "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["Authorized to work in Canada"],
+      "willingToRelocate": "Yes"
+    },
+    {
+      "id": 302,
+      "name": "Andrew C.",
+      "title": "Software Engineer",
+      "location": "Brooklyn, NY, United States",
+      "availability": {
+        "types": ["Full Time", "Part Time", "Contract"],
+        "startDate": null,
+        "note": null
+      },
+      "experience": 1,
+      "skills": [
+        "React", "Next.js", "TypeScript", "JavaScript", "CSS/SCSS", "Tailwind CSS", "UI/UX Design",
+        "Node.js", "Express", "Python", "Django",
+        "Docker", "CI/CD Pipelines",
+        "PostgreSQL", "MySQL", "MongoDB",
+        "REST API Design", "Git / GitHub", "Agile / Scrum"
+      ],
+      "bio": "Recent Computer Science graduate from the University at Buffalo with a focus on frontend development and experience on fullstack projects. Enjoys building clean, user-friendly interfaces and backend logic to power them. Passionate about real-world problem-solving and scalable software design.",
+      "projects": [
+        {
+          "name": "Reversi/Othello Web App",
+          "description": "Built a fullstack implementation of the othello board game.",
+          "technologies": ["MongoDB", "Express", "React", "Node.js"],
+          "link": "https://reversiproject.netlify.app/"
+        },
+        {
+          "name": "Personal Portfolio",
+          "description": "Developed a personal portfolio website.",
+          "technologies": ["React", "NPM", "TailwindCSS"],
+          "link": "https://idkuri.github.io/"
+        },
+        {
+          "name": "SnapTranslate",
+          "description": "Developed an OCR translation tool that captures a portion of your screen and translates extracted text from English to Japanese.",
+          "technologies": ["Electron.js", "Python", "Pytesseract"],
+          "link": "https://github.com/idkuri/SnapTranslate"
+        }
+      ],
+      "links": {
+        "github": null,
+        "linkedin": null,
+        "resume": null,
+        "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["U.S. Citizen"],
+      "willingToRelocate": "Yes"
     }
   ]
 }
