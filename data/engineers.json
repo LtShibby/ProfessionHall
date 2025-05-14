@@ -844,6 +844,166 @@
       "image": null,
       "workAuthorization": ["U.S. Citizen"],
       "willingToRelocate": "Yes"
-    }
+    },
+    {
+      "id": 1001,
+      "name": "Harshith M.",
+      "title": "Business Intelligence Analyst",
+      "location": "Redmond, Washington, United States",
+      "availability": {
+          "types": ["Full Time", "Contract"],
+          "startDate": null,
+          "note": null
+      },
+      "experience": 3,
+      "skills": [
+          "SQL", "Tableau", "Power BI", "Quicksight", "Python", "AWS", "Business Intelligence",
+          "AWS", "CI/CD Pipelines",
+          "PostgreSQL", "MySQL",
+          "Pandas", "Scikit-learn", "Airflow", "Spark",
+          "Git / GitHub", "Agile / Scrum", "Microservices Architecture"
+      ],
+      "bio": "Master’s in Data Science from University at Buffalo. Background in business intelligence and analytics. Currently at Wells Fargo delivering insights through Tableau, Quicksight, Redshift, and AWS. Previously at JP Morgan India. Specializes in transforming raw data into actionable insights.",
+      "projects": [
+          {
+              "name": "Financial Product Profitability Tracker – Wells Fargo",
+              "description": "Built a scalable pipeline to track profitability across business units. Ingested data from Snowflake and DynamoDB, transformed via Python and AWS Glue, stored in Redshift, and visualized in Tableau.",
+              "technologies": ["Python", "SQL", "AWS Glue", "Redshift", "Tableau", "Snowflake", "ETL Design"],
+              "link": null
+          },
+          {
+              "name": "Customer Support Repeat Contact Reduction Dashboard",
+              "description": "Dashboard in QuickSight analyzing support contact rates. Data from Redshift, time-window logic applied, and visualizations enabled ops to reduce contacts by 15%.",
+              "technologies": ["SQL", "QuickSight", "AWS Glue", "Lambda", "Python", "Data Modeling"],
+              "link": null
+          }
+      ],
+      "links": {
+          "github": null,
+          "linkedin": null,
+          "resume": null,
+          "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["F-1 OPT / CPT", "Authorized to work in the U.S."],
+      "willingToRelocate": "Yes"
+  },
+  {
+      "id": 1002,
+      "name": "Patrick K.",
+      "title": "Software Engineer",
+      "location": "Middlefield, CT, USA",
+      "availability": {
+          "types": ["Full Time", "Part Time", "Contract"],
+          "startDate": null,
+          "note": null
+      },
+      "experience": 3,
+      "skills": [
+          "TypeScript", "JavaScript",
+          "Node.js", "Express", "Python", "Django", "Flask", "Java", "Spring Boot",
+          "Docker", "Kubernetes", "CI/CD Pipelines",
+          "MySQL", "MongoDB",
+          "REST API Design", "TDD / Unit Testing", "Git / GitHub", "Agile / Scrum", "System Design", "Microservices Architecture",
+          "Auth0"
+      ],
+      "bio": "Software Engineer with 3 years of experience, specialized in authentication and backend systems. Currently at Paychex, serving as SME on Auth0 implementation and migration from SiteMinder.",
+      "projects": [
+          {
+              "name": "Auth0 Integration",
+              "description": "Led Auth0 integration across Paychex, supporting cross-functional teams in secure auth migration from Broadcom SiteMinder to Okta/Auth0.",
+              "technologies": ["Auth0", "Communication", "Security Protocols", "Multidisciplinary Teams"],
+              "link": null
+          }
+      ],
+      "links": {
+          "github": null,
+          "linkedin": null,
+          "resume": null,
+          "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["U.S. Citizen"],
+      "willingToRelocate": "Yes"
+  },
+  {
+      "id": 1003,
+      "name": "Zori B.",
+      "title": "Software Engineer",
+      "location": "Los Angeles, CA, USA",
+      "availability": {
+          "types": ["Full Time", "Part Time", "Contract"],
+          "startDate": null,
+          "note": null
+      },
+      "experience": 1,
+      "skills": [
+          "React", "JavaScript",
+          "Python", "Java",
+          "AWS", "Azure", "CI/CD Pipelines",
+          "MySQL", "MongoDB",
+          "PyTorch", "TensorFlow",
+          "TDD / Unit Testing", "Git / GitHub", "Agile / Scrum"
+      ],
+      "bio": "Recent CS grad with industry experience and personal interest in full-stack development. Passionate about clean architecture and growing through hands-on engineering work.",
+      "projects": [
+          {
+              "name": "Android App",
+              "description": "Android GUI app capturing user info and displaying it on a second screen.",
+              "technologies": ["Kotlin", "Android Studio"],
+              "link": null
+          }
+      ],
+      "links": {
+          "github": null,
+          "linkedin": null,
+          "resume": null,
+          "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["U.S. Citizen"],
+      "willingToRelocate": "Yes"
+  },
+  {
+      "id": 1004,
+      "name": "Elizabeth S.",
+      "title": "Growth Marketer",
+      "location": "Los Angeles, California, USA",
+      "availability": {
+          "types": ["Full Time", "Part Time", "Contract"],
+          "startDate": null,
+          "note": null
+      },
+      "experience": 3,
+      "skills": [
+          "Meta Ads", "ChatGPT", "Meta Ads API", "Google Sheets", "Zapier",
+          "GA4", "Looker Studio", "UTM Tagging", "Google Tag Manager",
+          "Automation", "Ad Testing", "Campaign Optimization"
+      ],
+      "bio": "Performance-driven Growth Marketer with 3+ years experience managing ad campaigns, using AI tools for creative testing, and automating marketing operations. Passionate about scalability and impact.",
+      "projects": [
+          {
+              "name": "AI-Driven Ad Optimization Experiment",
+              "description": "A/B tested AI-powered workflows vs manual campaign builds for a trichologist client. Achieved -18% CPA and +12% CTR using ChatGPT and Meta Ads API.",
+              "technologies": ["Meta Ads Manager", "ChatGPT", "Meta Ads API", "Google Sheets", "Zapier"],
+              "link": null
+          },
+          {
+              "name": "Instagram Growth Strategy",
+              "description": "Executed content strategy for LA wellness brand; +4,000 followers, +22% engagement in 3 months using Buffer and data tools.",
+              "technologies": ["Instashot", "Epidemic Sound", "Buffer", "GA4", "Looker Studio"],
+              "link": null
+          }
+      ],
+      "links": {
+          "github": null,
+          "linkedin": null,
+          "resume": null,
+          "portfolio": null
+      },
+      "image": null,
+      "workAuthorization": ["Authorized to work in the U.S."],
+      "willingToRelocate": "Yes"
+  }
   ]
 }
